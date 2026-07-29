@@ -305,150 +305,503 @@ h1{font-family:'Saira Condensed';font-weight:800;font-size:28px;text-transform:u
 /* ============ CONTEÚDO DOS DIAS ============ */
 const DIAS=[
 {
-  n:23, data:'Aula extra', topic:'PCPI/FGV — lacunas encontradas na prova real',
-  meta:'Tecnologia & Cibernética · Antianálise, Word, cookies, bancos, HTTP, hardware seguro e IA generativa',
-  recap:'<b>Por que esta aula existe:</b> as questões 15 a 22 da prova de Oficial Investigador da PCPI cobraram oito pontos que não estavam ensinados com profundidade suficiente nos 22 dias anteriores. Aqui entram apenas as lacunas reais identificadas na comparação com a prova oficial.',
-  aula:`
-    <p>Esta é uma <span class="gold">aula de cobertura de lacunas</span>. O objetivo não é repetir o que já está no caderno, mas acrescentar os detalhes que a FGV efetivamente cobrou em uma prova policial de investigador. Os oito blocos abaixo correspondem, na mesma ordem, às questões 15 a 22 da prova analisada.</p>
-
-    <h3>1. Técnicas de malware contra análise e antivírus</h3>
-    <p>Malwares modernos não tentam apenas infectar a máquina: também procuram <b>evitar a análise</b>, <b>enganar mecanismos de monitoramento</b> ou <b>atacar diretamente as ferramentas de segurança</b>. A FGV pode trocar os nomes e as definições entre si.</p>
-    <table class="tabela">
-      <tr><th>Técnica</th><th>Ideia central</th></tr>
-      <tr><td><b>Antiemulação</b></td><td>detecta emulador, sandbox ou máquina virtual e altera ou interrompe o comportamento para não revelar a carga maliciosa</td></tr>
-      <tr><td><b>Armoring / antidepuração</b></td><td>ofusca, embaralha ou protege o código para dificultar análise estática, depuração e engenharia reversa</td></tr>
-      <tr><td><b>Retrovírus</b></td><td>procura neutralizar, encerrar ou corromper antivírus e outros mecanismos defensivos</td></tr>
-      <tr><td><b>Evasão / avoidance</b></td><td>muda padrão, assinatura ou comportamento para escapar da detecção</td></tr>
-      <tr><td><b>Tunelamento / tunneling</b></td><td>segue o caminho real das rotinas do sistema e contorna hooks ou interceptações instaladas pelo monitor de segurança</td></tr>
-    </table>
-    <div class="dica"><b>Pegadinha da questão 15:</b> tornar a análise difícil é armoring; atacar o antivírus é retrovírus; detectar sandbox é antiemulação; contornar a interceptação da API e alcançar a função real é <b>tunelamento</b>.</div>
-
-    <h3>2. Word 365 — marca-d'água</h3>
-    <p>Para inserir texto semitransparente ao fundo de todas as páginas, como <b>MINUTA</b>, <b>CONFIDENCIAL</b> ou <b>RASCUNHO</b>, usa-se no Word 365 o comando <span class="gold">Marca-d'água</span>, na guia <b>Design</b>, grupo <b>Plano de Fundo da Página</b>. Comentários ficam na revisão do texto; estilos formatam títulos e parágrafos; nenhum deles cria texto diagonal de fundo.</p>
-
-    <h3>3. LGPD aplicada a cookies</h3>
-    <p>Cookie é um identificador gravado pelo site no navegador. Quando puder identificar ou tornar identificável uma pessoa, haverá <b>dado pessoal</b> e o seu uso será tratamento. Cookies estritamente necessários podem decorrer da execução do serviço solicitado. Para cookies não essenciais, especialmente publicidade e rastreamento, o <b>consentimento</b> é a base mais cobrada em prova.</p>
-    <table class="tabela">
-      <tr><th>Dispositivo</th><th>O que lembrar</th></tr>
-      <tr><td><b>Art. 7º, I</b></td><td>autoriza o tratamento mediante consentimento do titular</td></tr>
-      <tr><td><b>Art. 8º</b></td><td>disciplina a manifestação de vontade, que deve ser demonstrável e ligada a finalidades determinadas</td></tr>
-      <tr><td><b>Art. 9º</b></td><td>garante informação clara sobre finalidade, forma, duração e agentes do tratamento</td></tr>
-    </table>
-    <div class="dica"><b>Precisão importante:</b> a LGPD possui várias bases legais. Não é tecnicamente correto afirmar que todo cookie depende sempre de consentimento. Na questão da PCPI, porém, o fundamento perguntado para cookies não essenciais era o <b>art. 7º, I</b>.</div>
-
-    <h3>4. Cookie jars e isolamento por site</h3>
-    <p>Um <b>cookie jar</b> é o compartimento lógico no qual o navegador mantém cookies. O recurso <span class="gold">Total Cookie Protection</span>, do Firefox, separa os cookies por site principal: um cookie de terceiro colocado dentro do site A não pode acompanhar livremente o usuário quando ele visita o site B.</p>
-    <p>Não confunda os navegadores. O Edge atual usa o núcleo <b>Chromium</b>, não EdgeHTML. O modo anônimo não cria cookie jar permanente: os cookies podem funcionar durante a sessão, mas são descartados quando ela termina. A Privacy Sandbox do Chrome reúne propostas de privacidade, mas não corresponde, por si só, à descrição literal de um contêiner nativo isolado para cada domínio.</p>
-
-    <h3>5. ANSI/SPARC — três níveis do banco de dados</h3>
-    <table class="tabela">
-      <tr><th>Nível</th><th>O que representa</th></tr>
-      <tr><td><b>Externo</b></td><td>as visões específicas de usuários e aplicações</td></tr>
-      <tr><td><b>Conceitual</b></td><td>o modelo lógico global do banco: entidades, relacionamentos e regras</td></tr>
-      <tr><td><b>Interno</b></td><td>a forma física de armazenamento: arquivos, índices, páginas e diretórios</td></tr>
-    </table>
-    <p><b>Independência física</b> significa alterar o nível interno sem afetar o esquema conceitual. Exemplo: trocar organização de arquivos ou índices sem reescrever o modelo lógico. <b>Independência lógica</b> significa alterar o esquema conceitual sem obrigar a mudança das visões externas dos usuários.</p>
-    <div class="dica"><b>Pegadinha da questão 19:</b> físico muda por baixo e preserva o conceitual; lógico muda no conceitual e procura preservar as visões externas. A banca troca os níveis.</div>
-
-    <h3>6. Métodos HTTP</h3>
-    <table class="tabela">
-      <tr><th>Método</th><th>Função típica</th></tr>
-      <tr><td><b>GET</b></td><td>obter uma representação do recurso</td></tr>
-      <tr><td><b>HEAD</b></td><td>obter somente os cabeçalhos que um GET retornaria, sem o corpo</td></tr>
-      <tr><td><b>POST</b></td><td>enviar dados para processamento ou criação subordinada de recurso</td></tr>
-      <tr><td><b>PUT</b></td><td>criar ou substituir integralmente o recurso no endereço indicado</td></tr>
-      <tr><td><b>DELETE</b></td><td>solicitar a remoção do recurso</td></tr>
-      <tr><td><b>OPTIONS</b></td><td>consultar opções e métodos admitidos pelo recurso ou servidor</td></tr>
-      <tr><td><b>TRACE</b></td><td>pedir que o servidor devolva a requisição recebida, útil para diagnóstico</td></tr>
-      <tr><td><b>CONNECT</b></td><td>estabelecer um túnel, normalmente através de proxy</td></tr>
-    </table>
-    <div class="dica"><b>Pegadinha da questão 20:</b> quem devolve a própria solicitação recebida é o <b>TRACE</b>. Quem consulta capacidades é OPTIONS; quem cria túnel é CONNECT.</div>
-
-    <h3>7. Hardware de segurança</h3>
-    <p><b>HSM</b> (Hardware Security Module) é um equipamento físico robusto destinado a gerar, proteger e utilizar chaves criptográficas sem expô-las ao sistema comum. Ele pode executar cifragem, decifragem e assinatura digital dentro do próprio módulo.</p>
-    <table class="tabela">
-      <tr><th>Dispositivo</th><th>Função</th></tr>
-      <tr><td><b>HSM</b></td><td>protege chaves de alto valor e executa operações criptográficas em ambiente resistente a adulteração</td></tr>
-      <tr><td><b>SED</b></td><td>disco autocriptografável que cifra os dados automaticamente por controlador ou firmware interno</td></tr>
-      <tr><td><b>Token / smartcard</b></td><td>armazena credencial ou chave do usuário; pode usar contato físico, USB, NFC ou outras interfaces, conforme o modelo</td></tr>
-      <tr><td><b>Rugged device</b></td><td>dispositivo móvel reforçado para condições adversas; robustez física não significa, por definição, criptografia obrigatória de toda mídia capturada</td></tr>
-    </table>
-
-    <h3>8. Modelos de IA generativa</h3>
-    <table class="tabela">
-      <tr><th>Modelo</th><th>Ideia central</th></tr>
-      <tr><td><b>LLM</b></td><td>estima probabilidades de tokens conforme o contexto e gera sequências</td></tr>
-      <tr><td><b>Difusão</b></td><td>aprende a reverter progressivamente um processo de adição de ruído</td></tr>
-      <tr><td><b>GAN</b></td><td>um gerador produz amostras e um discriminador tenta distinguir reais de artificiais</td></tr>
-      <tr><td><b>Modelo fundacional</b></td><td>é treinado em grande volume e pode ser adaptado a diversas tarefas posteriores</td></tr>
-      <tr><td><b>Multimodal</b></td><td>processa ou relaciona modalidades diferentes, como texto, imagem, áudio e vídeo</td></tr>
-    </table>
-    <div class="dica"><b>Pegadinha da questão 22:</b> integrar vários sentidos e fazer traduções entre modalidades descreve um modelo <b>multimodal</b>, não um modelo apenas de áudio e voz. As descrições de difusão, LLM, fundacional e GAN estavam corretas.</div>`,
-  aquecimento:[
-    {t:'Ao analisar um malware, o perito observa que ele percorre o código das funções da API até alcançar a rotina real, evitando os pontos de interceptação instalados pelo monitor de segurança. A técnica é denominada:',a:['Antiemulação','Armoring','Retrovírus','Evasão comportamental','Tunelamento'],c:4,w:['Antiemulação procura identificar sandbox, emulador ou máquina virtual.','Armoring dificulta depuração e análise do código.','Retrovírus ataca ou neutraliza ferramentas defensivas.','Evasão é categoria ampla; o mecanismo específico descrito é o tunelamento.',''],e:'Seguir a rotina real e contornar hooks de monitoramento caracteriza <b>tunelamento</b>. A FGV derruba trocando essa definição com armoring e retrovírus.'},
-    {t:'Um investigador precisa inserir a palavra MINUTA, na diagonal e de forma semitransparente, ao fundo de todas as páginas de um relatório no Word 365. O recurso adequado é:',a:['Comentários, na guia Revisão','Estilos, na guia Página Inicial','Marca-d\'água, na guia Design','Ocultar Tinta, na guia Revisão','Cabeçalho, obrigatoriamente editado página por página'],c:2,w:['Comentários registram observações de revisão, não texto de fundo.','Estilos padronizam a formatação dos parágrafos.','','Ocultar Tinta trata de anotações feitas com recursos de desenho.','É possível simular pelo cabeçalho, mas o comando próprio e cobrado é Marca-d\'água.'],e:'No Word 365, o caminho próprio é <b>Design → Plano de Fundo da Página → Marca-d\'água</b>.'},
-    {t:'No contexto cobrado pela FGV, a base legal da LGPD mais diretamente associada ao consentimento para cookies não essenciais é:',a:['Art. 5º, X','Art. 7º, I','Art. 9º, § 4º','Art. 18, VI','Art. 46'],c:1,w:['O art. 5º, X define tratamento; não cria a base legal do consentimento.','','O art. 9º disciplina transparência, não é a base legal pedida.','O art. 18 trata de direitos do titular.','O art. 46 trata de medidas de segurança.'],e:'O <b>art. 7º, I</b> admite o tratamento mediante consentimento. O art. 8º disciplina como essa manifestação deve ser obtida e demonstrada.'},
-    {t:'Um navegador separa os cookies de terceiros conforme o site principal visitado, impedindo que o mesmo rastreador acompanhe livremente o usuário entre domínios. No Firefox, esse mecanismo é conhecido como:',a:['Privacy Sandbox','Total Cookie Protection','EdgeHTML Isolation','Container Cookies do Edge','Cookie jar permanente do modo anônimo'],c:1,w:['Privacy Sandbox é uma iniciativa do Chrome, não o nome do recurso do Firefox.','','EdgeHTML não é o núcleo atual do Edge e não nomeia o recurso.','Essa denominação não corresponde ao recurso nativo descrito.','O modo anônimo descarta os cookies ao final; não cria armazenamento permanente.'],e:'O Firefox denomina o isolamento por site de <b>Total Cookie Protection</b>.'},
-    {t:'Uma equipe altera índices, páginas e diretórios físicos de um banco de dados sem modificar o esquema conceitual nem as aplicações. Na arquitetura ANSI/SPARC, isso exemplifica:',a:['Independência lógica de dados','Fragmentação horizontal','Independência física de dados','Abstração de visão','Normalização estrutural'],c:2,w:['A independência lógica envolve mudanças no esquema conceitual preservando visões externas.','Fragmentação distribui registros, mas não é o conceito geral pedido.','','Abstração de visão pertence ao nível externo e não descreve a mudança física.','Normalização reorganiza relações lógicas, não o armazenamento físico.'],e:'Alterar o nível <b>interno</b> sem impactar o <b>conceitual</b> é independência física de dados.'},
-    {t:'Durante diagnóstico de uma aplicação web, o analista precisa solicitar que o servidor devolva a requisição HTTP exatamente como a recebeu. O método apropriado é:',a:['HEAD','OPTIONS','CONNECT','PUT','TRACE'],c:4,w:['HEAD retorna cabeçalhos sem o corpo da representação.','OPTIONS informa capacidades e métodos permitidos.','CONNECT estabelece um túnel.','PUT cria ou substitui o recurso indicado.',''],e:'O método <b>TRACE</b> pede o eco da solicitação recebida, permitindo examinar alterações feitas por intermediários.'},
-    {t:'A Polícia Civil pretende manter chaves criptográficas de alto valor em equipamento resistente a adulteração, executando assinaturas sem expor a chave privada ao sistema operacional comum. A solução é um:',a:['Disco SED','Rugged device','Leitor de smartcard sem cartão','HSM','Bodycam'],c:3,w:['O SED protege os dados armazenados no próprio disco, não centraliza chaves de alto valor para múltiplas operações.','Rugged device é um equipamento móvel reforçado fisicamente.','O leitor, isoladamente, não guarda nem protege a chave.','','Bodycam registra áudio e vídeo; não exerce a função criptográfica descrita.'],e:'O <b>HSM</b> protege chaves e realiza operações criptográficas dentro do módulo seguro.'},
-    {t:'Assinale a descrição INCORRETA sobre IA generativa.',a:['Um modelo apenas de áudio e voz é, por definição, intermodal por integrar texto, imagem, áudio e vídeo','Um modelo de difusão aprende a reverter um processo gradual de adição de ruído','Um LLM estima probabilidades de tokens a partir do contexto','Um modelo fundacional pode ser adaptado para múltiplas tarefas posteriores','Uma GAN combina gerador e discriminador em treinamento adversarial'],c:0,w:['','A descrição resume corretamente o princípio dos modelos de difusão.','Essa é a lógica central do treinamento autorregressivo de muitos LLMs.','Amplitude de dados e adaptabilidade caracterizam modelos fundacionais.','Gerador e discriminador são os dois componentes clássicos de uma GAN.'],e:'A INCORRETA é a primeira: integrar várias modalidades descreve um modelo <b>multimodal</b>, não um modelo apenas de áudio e voz.'}
+  "n": 23,
+  "data": "Aula extra",
+  "topic": "Antianálise, cookies, bancos, HTTP, hardware seguro e IA",
+  "meta": "Tecnologia & Cibernética · Cobertura final de conceitos avançados",
+  "recap": "<b>Fechamento de lacunas:</b> esta microaula reúne conceitos avançados que costumam aparecer misturados em situações práticas: técnicas de evasão de malware, recursos do Word, cookies, arquitetura de bancos, métodos HTTP, hardware criptográfico e modelos generativos.",
+  "aula": "<h3>📖 Antianálise e evasão de malware</h3>\n<p>Malwares podem tentar esconder o próprio comportamento, dificultar a engenharia reversa ou atacar diretamente as ferramentas defensivas. <b>Antiemulação</b> procura reconhecer sandbox, emulador ou máquina virtual e altera a execução para não revelar a carga maliciosa. <b>Armoring</b> usa ofuscação, empacotamento e técnicas antidepuração para tornar o código difícil de examinar. <b>Retrovírus</b> busca neutralizar antivírus, agentes de monitoramento ou processos de segurança.</p>\n<p>Outra técnica é o <span class=\"gold\">tunelamento</span>: o código percorre ou alcança a rotina real do sistema para contornar hooks e interceptações instalados por ferramentas de análise. Já <b>evasão</b> é um termo mais amplo, usado quando o malware altera assinatura, fluxo ou comportamento para escapar da detecção. A diferença está no alvo: detectar ambiente, esconder código, atacar defesa ou contornar interceptação.</p>\n<div class=\"dica\"><b>🔑 MACETE \"AMBIENTE, ARMADURA, ANTIVÍRUS, ATALHO\":</b> antiemulação detecta o ambiente; armoring cria armadura no código; retrovírus ataca o antivírus; tunelamento encontra um atalho até a rotina real.</div>\n<h3>📖 Word e cookies no navegador</h3>\n<p>No Word, o recurso próprio para inserir texto semitransparente ao fundo das páginas é <span class=\"gold\">Marca-d'água</span>, localizado na guia <b>Design</b>. Comentários servem à revisão; estilos padronizam formatação; cabeçalho pode ser usado em soluções manuais, mas não substitui o comando específico. A pista é a expressão repetida ao fundo, como MINUTA, CONFIDENCIAL ou RASCUNHO.</p>\n<p>Cookies são pequenos identificadores armazenados pelo navegador. Quando permitem identificar ou tornar identificável uma pessoa, podem constituir dado pessoal. Cookies estritamente necessários podem estar ligados à execução do serviço solicitado. Cookies não essenciais, especialmente os de publicidade e rastreamento, exigem base jurídica adequada e transparência sobre finalidade, duração e agentes envolvidos.</p>\n<p>O <b>Total Cookie Protection</b> separa cookies conforme o site principal visitado. Assim, um rastreador carregado dentro do site A não recebe automaticamente o mesmo compartimento quando aparece no site B. O modo privado, por sua vez, mantém dados durante a sessão e normalmente os descarta no encerramento; ele não cria armazenamento permanente nem torna o usuário invisível.</p>\n<div class=\"dica\"><b>🔑 MACETE \"FUNDO É DESIGN; COOKIE TEM POTE\":</b> texto de fundo aponta para Marca-d'água na guia Design; isolamento de cookies funciona como potes separados por site principal.</div>\n<h3>📖 ANSI/SPARC e independência de dados</h3>\n<p>A arquitetura ANSI/SPARC separa o banco de dados em três níveis. O <b>externo</b> contém as visões específicas de usuários e aplicações. O <b>conceitual</b> representa o modelo lógico global, com entidades, relacionamentos e regras. O <b>interno</b> descreve armazenamento físico, páginas, arquivos e índices.</p>\n<p><span class=\"gold\">Independência física</span> ocorre quando mudanças no nível interno não exigem alteração do esquema conceitual. Criar índices, reorganizar arquivos ou trocar a distribuição física sem modificar entidades é exemplo clássico. <span class=\"gold\">Independência lógica</span> ocorre quando mudanças no esquema conceitual procuram preservar as visões externas. A banca costuma trocar os pares interno-conceitual e conceitual-externo.</p>\n<div class=\"dica\"><b>🔑 MACETE \"FÍSICO FICA POR BAIXO; LÓGICO FICA NO MEIO\":</b> físico muda o nível interno e preserva o conceitual; lógico muda o conceitual e tenta preservar as visões externas.</div>\n<h3>📖 Métodos HTTP e hardware criptográfico</h3>\n<p><b>GET</b> obtém uma representação; <b>HEAD</b> retorna os cabeçalhos que um GET produziria, sem o corpo; <b>POST</b> envia dados para processamento; <b>PUT</b> cria ou substitui integralmente um recurso no endereço indicado; <b>DELETE</b> solicita remoção; <b>OPTIONS</b> consulta capacidades; <b>TRACE</b> pede o eco da requisição recebida; <b>CONNECT</b> estabelece um túnel, normalmente por proxy.</p>\n<p>Em segurança criptográfica, o <span class=\"gold\">HSM</span> protege chaves de alto valor e executa operações dentro de módulo resistente a adulteração. Um <b>SED</b> é um disco autocriptografável, voltado à proteção dos dados armazenados no próprio dispositivo. Tokens e smartcards guardam credenciais ou chaves do usuário. Um equipamento reforçado fisicamente não se torna, apenas por isso, um módulo criptográfico.</p>\n<div class=\"dica\"><b>🔑 MACETE \"TRACE TRAÇA, CONNECT CONECTA\":</b> TRACE devolve a solicitação recebida para diagnóstico; CONNECT cria o túnel. HSM guarda a chave e opera dentro do cofre.</div>\n<h3>📖 Modelos de IA generativa</h3>\n<p>Um <b>LLM</b> estima probabilidades de tokens conforme o contexto e gera sequências. Modelos de <b>difusão</b> aprendem a reverter progressivamente um processo de adição de ruído. Em uma <b>GAN</b>, o gerador produz amostras e o discriminador tenta distinguir as artificiais das reais. Um <b>modelo fundacional</b> é treinado em grande escala e pode ser adaptado a várias tarefas.</p>\n<p>Um modelo <span class=\"gold\">multimodal</span> processa ou relaciona modalidades diferentes, como texto, imagem, áudio e vídeo. Um sistema apenas de áudio não se torna automaticamente multimodal. A classificação depende da variedade de modalidades integradas, e não da quantidade de funções executadas dentro de uma única modalidade.</p>\n<div class=\"dica\"><b>🔑 MACETE \"DIFUSÃO LIMPA RUÍDO; GAN DISPUTA; MULTIMODAL MISTURA\":</b> difusão reverte ruído, GAN coloca gerador contra discriminador e multimodal integra tipos diferentes de informação.</div>\n<h3>📌 Resumo em 30 segundos</h3>\n<p>Antiemulação detecta ambiente; armoring dificulta análise; retrovírus ataca defesas; tunelamento contorna hooks. Marca-d'água fica em Design. Cookies podem ser isolados por site. ANSI/SPARC separa externo, conceitual e interno. TRACE ecoa a requisição; CONNECT cria túnel. HSM protege chaves. LLM gera tokens, difusão remove ruído, GAN usa disputa e multimodal integra modalidades.</p>",
+  "aquecimento": [
+    {
+      "t": "Ao detectar sandbox e interromper sua carga maliciosa, um programa emprega principalmente:",
+      "a": [
+        "Antiemulação, pois reconhece o ambiente controlado antes de revelar o comportamento",
+        "Armoring, pois apenas embaralha o código para dificultar a leitura estática",
+        "Retrovírus, pois encerra processos defensivos instalados no equipamento",
+        "Tunelamento, pois percorre a rotina real para contornar pontos de interceptação",
+        "Persistência, pois cria mecanismo automático de execução após reinicialização"
+      ],
+      "c": 0,
+      "w": [
+        "",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário."
+      ],
+      "e": "<b>Antiemulação</b> identifica sandbox, máquina virtual ou emulador e altera a execução para evitar exposição. Armoring protege o código; retrovírus ataca ferramentas defensivas; tunelamento contorna hooks. A resolução exige localizar o alvo da conduta: o ambiente de análise, e não o antivírus ou a estrutura do código.",
+      "peg": "agente"
+    },
+    {
+      "t": "No Word, a expressão CONFIDENCIAL deve aparecer semitransparente ao fundo de todas as páginas. O recurso próprio é:",
+      "a": [
+        "Comentário da guia Revisão, exibido permanentemente atrás do conteúdo",
+        "Marca-d'água da guia Design, aplicada ao plano de fundo das páginas",
+        "Estilo da guia Página Inicial, associado a todos os parágrafos do documento",
+        "Nota de rodapé da guia Referências, repetida automaticamente em cada página",
+        "Controle de alterações, configurado para mostrar inserções em segundo plano"
+      ],
+      "c": 1,
+      "w": [
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário."
+      ],
+      "e": "<b>Marca-d'água</b> é o comando específico para texto ou imagem ao fundo das páginas e fica na guia Design. Comentários, estilos, notas e controle de alterações possuem finalidades diferentes. A pista decisiva é a presença repetida e semitransparente no plano de fundo, não uma anotação ligada ao texto.",
+      "peg": "recurso_finalidade"
+    },
+    {
+      "t": "Na arquitetura ANSI/SPARC, alterar índices e páginas físicas sem modificar o esquema conceitual exemplifica:",
+      "a": [
+        "Independência lógica, porque o nível conceitual foi alterado sem afetar usuários",
+        "Abstração externa, porque as visões passaram a controlar arquivos físicos",
+        "Independência física, porque o nível interno mudou e o conceitual foi preservado",
+        "Normalização, porque índices eliminam redundância entre relações do banco",
+        "Fragmentação lógica, porque os registros foram divididos entre aplicações"
+      ],
+      "c": 2,
+      "w": [
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário."
+      ],
+      "e": "<b>Independência física</b> permite alterar o nível interno, como arquivos, páginas e índices, sem exigir mudança do esquema conceitual. A independência lógica atua entre o conceitual e as visões externas. A armadilha é trocar os níveis adjacentes; identifique primeiro onde ocorreu a mudança e qual camada permaneceu estável.",
+      "peg": "regra_invertida"
+    },
+    {
+      "t": "O método HTTP destinado a devolver ao cliente a requisição tal como foi recebida é:",
+      "a": [
+        "HEAD, pois retorna somente os cabeçalhos de uma representação",
+        "OPTIONS, pois informa os métodos aceitos pelo recurso consultado",
+        "CONNECT, pois estabelece um túnel de comunicação por intermediário",
+        "TRACE, pois realiza o eco da solicitação recebida para diagnóstico",
+        "PUT, pois substitui integralmente o recurso existente no endereço"
+      ],
+      "c": 3,
+      "w": [
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário."
+      ],
+      "e": "<b>TRACE</b> solicita o eco da requisição recebida e pode revelar alterações feitas por intermediários. HEAD retorna cabeçalhos sem corpo; OPTIONS consulta capacidades; CONNECT cria túnel; PUT cria ou substitui recurso. O verbo “devolver a própria solicitação” distingue TRACE das demais operações HTTP.",
+      "peg": "conceito_vizinho"
+    }
   ],
-  selo:'Aula extra construída após comparação direta com as questões 15 a 22 da prova oficial da FGV para Oficial Investigador da PCPI. Questões oficiais foram adaptadas e as complementares estão identificadas pelo padrão autoral.',
-  fgv:[
-    {dif:'dificil',fonte:'FGV — PCPI — Oficial Investigador — adaptada',t:'Ao examinar uma amostra, o perito registra quatro comportamentos: I. o código interrompe a execução quando detecta sandbox; II. rotinas ofuscadas dificultam depuração; III. processos do antivírus são encerrados; IV. hooks da API são contornados até a função real. As técnicas correspondem, respectivamente, a:',a:['Armoring, antiemulação, tunelamento e retrovírus','Evasão, retrovírus, armoring e antiemulação','Tunelamento, evasão, antiemulação e armoring','Antiemulação, armoring, retrovírus e tunelamento','Retrovírus, tunelamento, evasão e antiemulação'],c:3,w:['As duas primeiras estão invertidas e as duas últimas também.','Encerrar antivírus é retrovírus, mas aparece na segunda posição; a ordem não corresponde aos fatos.','Detectar sandbox não é tunelamento e encerrar antivírus não é antiemulação.','','A primeira conduta não é retrovírus e a segunda não é tunelamento.'],e:'Sandbox = <b>antiemulação</b>; dificuldade de depuração = <b>armoring</b>; ataque ao antivírus = <b>retrovírus</b>; contorno de hooks = <b>tunelamento</b>. O termo respectivamente decide a questão.'},
-    {dif:'media',fonte:'FGV — PCPI — Oficial Investigador — adaptada',t:'Em relatório sigiloso, o investigador quer que a expressão CÓPIA DE TRABALHO apareça ao fundo de todas as páginas, sem integrar o texto principal. No Word 365, assinale o comando correto.',a:['Inserir nota de rodapé pela guia Referências','Aplicar estilo de texto pela guia Página Inicial','Usar Marca-d\'água no grupo Plano de Fundo da Página da guia Design','Criar comentário pela guia Revisão e escolher exibição em todas as páginas','Ocultar tinta no grupo Tinta da guia Revisão'],c:2,w:['Nota de rodapé aparece no rodapé e integra o conteúdo do documento.','Estilo altera a apresentação do texto selecionado.','','Comentário é anotação de revisão e não aparece como fundo geral.','Ocultar tinta apenas controla a exibição de traços e desenhos.'],e:'A funcionalidade própria é <b>Marca-d\'água</b>, acessada na guia Design.'},
-    {dif:'dificil',fonte:'FGV — PCPI — Oficial Investigador — adaptada',t:'Sobre cookies e LGPD, analise: I. cookies capazes de identificar uma pessoa podem constituir dados pessoais; II. o art. 7º, I admite tratamento mediante consentimento; III. todo cookie, inclusive o estritamente necessário ao serviço solicitado, depende exclusivamente de consentimento. Está correto o que se afirma em:',a:['I e II, apenas','III, apenas','I e III, apenas','II e III, apenas','I, II e III'],c:0,w:['','As duas primeiras também são verdadeiras.','A III é falsa e a II é verdadeira.','A III é falsa e a I é verdadeira.','A III derruba o conjunto: a LGPD possui outras bases legais e cookies necessários podem decorrer da execução do serviço.'],e:'I e II estão corretas. A III erra pelo absoluto <b>todo</b> e pelo termo <b>exclusivamente</b>: consentimento não é a única base legal da LGPD.'},
-    {dif:'dificil',fonte:'FGV — PCPI — Oficial Investigador — adaptada',t:'Ao comparar políticas de cookies, o analista concluiu corretamente que:',a:['O modo anônimo cria armazenamento permanente compartilhado por todas as sessões futuras','O Firefox usa Total Cookie Protection para separar cookies conforme o site principal','O Edge atual utiliza EdgeHTML e replica integralmente o isolamento do Firefox','A Privacy Sandbox é o nome de um contêiner obrigatório e isolado por domínio em todos os navegadores Chromium','Cookies de terceiros ficam necessariamente liberados quando o usuário abre janela anônima'],c:1,w:['O modo anônimo mantém dados apenas durante a sessão e os elimina ao final.','','O Edge atual usa Chromium, não EdgeHTML; além disso, a política não é idêntica por essa razão.','Privacy Sandbox é um conjunto de propostas, não a descrição literal apresentada.','A navegação anônima tende a restringir rastreamento e não libera necessariamente cookies de terceiros.'],e:'A afirmação correta é a do <b>Total Cookie Protection</b>, que cria compartimentos separados por site principal.'},
-    {dif:'dificil',fonte:'FGV — PCPI — Oficial Investigador — adaptada',t:'Em sistema policial integrado, o administrador troca a organização dos arquivos e cria novos índices de armazenamento, sem alterar entidades, relacionamentos ou visões utilizadas pelas delegacias. A propriedade demonstrada é:',a:['Independência lógica, porque toda mudança interna altera o modelo conceitual','Normalização, porque índices eliminam redundâncias sem afetar usuários','Abstração externa, porque o armazenamento passa a pertencer às visões locais','Independência física, porque o nível interno muda sem afetar o conceitual','Fragmentação vertical, porque os atributos foram distribuídos entre servidores'],c:3,w:['Independência lógica é a preservação das visões diante de mudança conceitual, não interna.','Índice melhora acesso físico e não é operação de normalização.','Visões externas não incorporam a organização física.','','O enunciado não descreve distribuição de atributos.'],e:'Mudança em arquivos e índices = nível <b>interno</b>; preservação do esquema conceitual = <b>independência física</b>.'},
-    {dif:'dificil',fonte:'FGV — PCPI — Oficial Investigador — adaptada',t:'Associe o método HTTP à função: 1. HEAD; 2. OPTIONS; 3. TRACE; 4. CONNECT. ( ) devolve a solicitação recebida; ( ) estabelece túnel por intermediário; ( ) retorna cabeçalhos sem o corpo; ( ) informa capacidades ou métodos admitidos. A sequência correta é:',a:['1 – 4 – 3 – 2','3 – 2 – 1 – 4','4 – 3 – 2 – 1','2 – 4 – 1 – 3','3 – 4 – 1 – 2'],c:4,w:['A primeira lacuna é TRACE, não HEAD.','A segunda lacuna é CONNECT, não OPTIONS.','A primeira lacuna não é CONNECT e a última não é HEAD.','A primeira lacuna é TRACE, não OPTIONS.',''],e:'Eco = <b>TRACE (3)</b>; túnel = <b>CONNECT (4)</b>; somente cabeçalhos = <b>HEAD (1)</b>; capacidades = <b>OPTIONS (2)</b>.'},
-    {dif:'dificil',fonte:'FGV — PCPI — Oficial Investigador — adaptada',t:'Uma autoridade pretende adotar quatro equipamentos. Assinale a associação correta.',a:['HSM — protege chaves e executa operações criptográficas dentro de módulo resistente a adulteração','Rugged device — necessariamente converte toda mídia capturada em conteúdo criptografado inacessível','Bodycam — reduz armazenamento convertendo obrigatoriamente luz policromática em imagem monocromática','Smartcard — funciona apenas sem contato físico, por radiofrequência ou Bluetooth','SED — depende de software externo para cifrar manualmente cada arquivo após a gravação'],c:0,w:['','Robustez física não implica, por definição, criptografia obrigatória de toda mídia.','Uma bodycam pode usar múltiplas tecnologias de imagem; essa não é sua definição.','Há smartcards de contato e sem contato; o termo apenas torna a afirmação falsa.','O SED realiza autocriptografia pelo controlador ou firmware interno.'],e:'O <b>HSM</b> é projetado para proteger chaves e executar operações criptográficas em ambiente físico seguro.'},
-    {dif:'dificil',fonte:'FGV — PCPI — Oficial Investigador — adaptada',t:'Analise as afirmativas: I. modelos de difusão aprendem a reverter a adição progressiva de ruído; II. LLMs modelam probabilidades de tokens conforme o contexto; III. GANs utilizam um gerador e um discriminador; IV. todo modelo de áudio e voz é necessariamente multimodal. Está correto o que se afirma em:',a:['II e IV, apenas','I, III e IV, apenas','I, II e III, apenas','III e IV, apenas','I, II, III e IV'],c:2,w:['A I e a III também são verdadeiras, e a IV é falsa.','A IV é falsa e a II é verdadeira.','','A IV é falsa e I e II também são verdadeiras.','A IV derruba o conjunto: áudio e voz podem ser unimodais.'],e:'I, II e III estão corretas. A IV é falsa: <b>multimodal</b> exige integração entre modalidades diferentes; áudio e voz, isoladamente, não garantem isso.'}
+  "selo": "Questões inéditas e adaptadas em linguagem própria sobre antianálise, Word, cookies, bancos, HTTP, hardware seguro e IA.",
+  "fgv": [
+    {
+      "t": "Um código ofuscado dificulta depuração; outro encerra o antivírus; um terceiro contorna hooks até a função real. As técnicas são, respectivamente:",
+      "a": [
+        "Antiemulação, tunelamento e armoring, porque todas detectam o ambiente",
+        "Armoring, retrovírus e tunelamento, conforme o alvo de cada comportamento",
+        "Retrovírus, armoring e evasão, porque a ordem segue o impacto defensivo",
+        "Tunelamento, antiemulação e retrovírus, conforme a camada atingida",
+        "Evasão, persistência e armoring, porque todas alteram a inicialização"
+      ],
+      "c": 1,
+      "w": [
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário."
+      ],
+      "e": "A sequência correta é <b>armoring, retrovírus e tunelamento</b>. Ofuscação e antidepuração protegem o código; encerramento do antivírus ataca a defesa; contorno de hooks alcança a rotina real. O “respectivamente” exige resolver cada conduta isoladamente antes de comparar a ordem oferecida pelas alternativas.",
+      "peg": "regra_invertida",
+      "dif": "dificil",
+      "fonte": "Questão inédita no estilo FGV"
+    },
+    {
+      "t": "Sobre cookies, assinale a afirmativa tecnicamente adequada.",
+      "a": [
+        "Todo cookie depende exclusivamente de consentimento, sem qualquer outra base jurídica",
+        "O modo privado impede tecnicamente toda forma de identificação durante a sessão",
+        "Cookies capazes de identificar uma pessoa podem constituir dados pessoais",
+        "Isolamento por site torna todos os cookies públicos para evitar rastreamento",
+        "Cookies de terceiros são sempre necessários à execução do serviço solicitado"
+      ],
+      "c": 2,
+      "w": [
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário."
+      ],
+      "e": "Cookies que identificam ou tornam uma pessoa identificável podem constituir <b>dados pessoais</b>. A legislação admite diferentes bases jurídicas, e o modo privado não garante anonimato absoluto. O isolamento por site restringe o compartilhamento entre contextos; não torna os dados públicos nem transforma todo cookie em elemento necessário.",
+      "peg": "absoluto",
+      "dif": "dificil",
+      "fonte": "Questão inédita no estilo FGV"
+    },
+    {
+      "t": "Um equipamento deve gerar e utilizar chaves privadas sem expô-las ao sistema operacional comum. A solução mais adequada é:",
+      "a": [
+        "Disco SED, voltado apenas à cifra automática do armazenamento local",
+        "Token de sessão, criado temporariamente pelo navegador para autenticação web",
+        "Bodycam reforçada, por resistir fisicamente a quedas e intempéries",
+        "HSM, que protege chaves e executa operações dentro do módulo seguro",
+        "Roteador com firmware atualizado, por controlar o tráfego entre redes"
+      ],
+      "c": 3,
+      "w": [
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário."
+      ],
+      "e": "O <b>HSM</b> é projetado para proteger chaves de alto valor e executar assinatura, cifragem ou decifragem dentro de ambiente resistente a adulteração. SED protege dados no disco; token, bodycam e roteador não cumprem a função descrita. A pista é manter a chave privada fora do sistema operacional comum.",
+      "peg": "recurso_finalidade",
+      "dif": "dificil",
+      "fonte": "Questão inédita no estilo FGV"
+    },
+    {
+      "t": "Assinale a descrição correta sobre modelos generativos.",
+      "a": [
+        "Modelos de difusão aprendem a reverter progressivamente um processo de adição de ruído",
+        "LLMs geram imagens apenas pela disputa direta entre gerador e discriminador",
+        "GANs utilizam exclusivamente uma etapa de remoção gradual de ruído gaussiano",
+        "Modelos fundacionais são treinados para uma única tarefa e não admitem adaptação",
+        "Todo modelo de áudio é necessariamente multimodal por processar muitos sinais"
+      ],
+      "c": 0,
+      "w": [
+        "",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário."
+      ],
+      "e": "Modelos de <b>difusão</b> aprendem a reverter a degradação por ruído até produzir uma amostra. GANs usam gerador e discriminador; LLMs modelam tokens; modelos fundacionais podem ser adaptados; multimodalidade exige modalidades diferentes. A alternativa correta associa mecanismo e arquitetura sem trocar conceitos vizinhos.",
+      "peg": "conceito_vizinho",
+      "dif": "dificil",
+      "fonte": "Questão inédita no estilo FGV"
+    }
+  ],
+  "seloExtrema": "Bloco de dificuldade máxima integrando isolamento de cookies, métodos HTTP e arquitetura ANSI/SPARC.",
+  "extrema": [
+    {
+      "t": "Um navegador mantém cookies de um rastreador em compartimentos separados conforme o site principal. O efeito direto é:",
+      "a": [
+        "Permitir que o rastreador compartilhe automaticamente o mesmo identificador entre todos os domínios",
+        "Impedir que cookies persistam durante a própria sessão de navegação do usuário",
+        "Reduzir o acompanhamento entre sites ao separar o armazenamento por contexto principal",
+        "Converter cada cookie em dado anônimo e retirado de qualquer regra de proteção",
+        "Substituir certificados TLS por identificadores armazenados no navegador"
+      ],
+      "c": 2,
+      "w": [
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário."
+      ],
+      "e": "A separação por site principal reduz o <b>rastreamento entre contextos</b>, pois o terceiro não reutiliza livremente o mesmo compartimento em domínios distintos. Isso não impede cookies durante a sessão, não anonimiza automaticamente dados e não substitui TLS. A finalidade é limitar correlação transversal, não eliminar todo armazenamento local.",
+      "peg": "alcance",
+      "dif": "dificil",
+      "fonte": "Questão inédita - FGV Extrema"
+    },
+    {
+      "t": "Associe: 1 HEAD; 2 OPTIONS; 3 TRACE; 4 CONNECT. Ecoa a requisição; cria túnel; retorna cabeçalhos sem corpo; consulta capacidades.",
+      "a": [
+        "1 - 3 - 4 - 2, porque HEAD inicia o diagnóstico e CONNECT retorna cabeçalhos",
+        "2 - 4 - 1 - 3, porque OPTIONS ecoa e TRACE apenas consulta métodos",
+        "3 - 1 - 2 - 4, porque TRACE ecoa e HEAD cria o túnel de transporte",
+        "4 - 3 - 2 - 1, porque CONNECT ecoa e TRACE estabelece a conexão",
+        "3 - 4 - 1 - 2, preservando as funções específicas de cada método"
+      ],
+      "c": 4,
+      "w": [
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        ""
+      ],
+      "e": "A sequência é <b>3 - 4 - 1 - 2</b>: TRACE ecoa a requisição, CONNECT estabelece túnel, HEAD retorna cabeçalhos sem corpo e OPTIONS consulta capacidades. A questão usa quatro métodos válidos e explora apenas a troca de funções. Resolva cada verbo separadamente antes de verificar a sequência completa.",
+      "peg": "regra_invertida",
+      "dif": "dificil",
+      "fonte": "Questão inédita - FGV Extrema"
+    },
+    {
+      "t": "Considere: I. mudança no nível interno preservando o conceitual; II. mudança conceitual preservando visões externas. As propriedades são:",
+      "a": [
+        "Independência lógica e independência física, nessa ordem",
+        "Abstração externa e normalização, nessa ordem",
+        "Fragmentação física e isolamento de transações, nessa ordem",
+        "Independência física e independência lógica, nessa ordem",
+        "Persistência interna e abstração lógica, nessa ordem"
+      ],
+      "c": 3,
+      "w": [
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário."
+      ],
+      "e": "A primeira situação descreve <b>independência física</b>; a segunda descreve <b>independência lógica</b>. A armadilha é inverter os pares entre níveis. Use a cadeia externo-conceitual-interno: mudança por baixo sem afetar o meio é física; mudança no meio sem afetar as visões é lógica.",
+      "peg": "regra_invertida",
+      "dif": "dificil",
+      "fonte": "Questão inédita - FGV Extrema"
+    }
   ]
 },
 {
-  n:24, data:'Extra II', topic:'Lacunas rodada 2 — LGPD, TLS, backup e políticas (FGV)',
-  meta:'Extra · Pseudonimização/anonimização, TLS, backup e políticas de segurança',
-  recap:'<b>Segunda rodada de cobertura de lacunas.</b> Pesquisamos outras provas FGV recentes (PC-PI Perito Informática Forense 2026, TJ-SC 2026, AL-AM 2025, MPE-RJ 2025, SEFAZ-BA) e encontramos temas que a banca cobrou e ainda não estavam no caderno. Sua prova tem 25 questões de Tecnologia — peso alto — então vale cobrir esses temas que a FGV vem cobrando em provas recentes.',
-  aula:`
-    <p><b>1. Pseudonimização × Anonimização (LGPD aplicada)</b></p>
-    <p>A FGV cobrou no TJ-SC 2026 exatamente essa dupla. <span class="gold">Anonimização</span> é o tratamento que <b>desvincula o dado do titular de forma irreversível</b> (por meios razoáveis): o dado anonimizado <b>deixa de ser dado pessoal</b> e sai do alcance da LGPD. Já a <span class="gold">pseudonimização</span> <b>substitui o identificador por um código/apelido, mas mantém a possibilidade de reversão</b> (a "tabela de correspondência" existe, guardada em separado): o dado pseudonimizado <b>continua sendo dado pessoal</b> e continua sob a LGPD. Guarde: <b>anonimizou de verdade = saiu da lei; pseudonimizou = continua na lei</b>.</p>
-    <div class="dica"><b>⚠️ Pegadinha:</b> "a pseudonimização retira o dado do alcance da LGPD" — <b>errado</b>. Só a anonimização (irreversível) faz isso. E cuidado: <b>Base64 não é criptografia</b> — é mera codificação, reversível por qualquer um, sem chave. A FGV usa "Base64" como distrator de segurança.</div>
-    <p><b>2. TLS — o protocolo por trás do HTTPS</b></p>
-    <p>Você já sabe que HTTPS = HTTP seguro na porta 443. O que faltava nomear: quem faz a segurança é o <span class="gold">TLS</span> (Transport Layer Security), sucessor do <b>SSL</b>. HTTPS = HTTP <b>sobre TLS</b>. No início da conexão ocorre o <b>handshake</b>: as partes negociam versão e algoritmos, o servidor apresenta seu <b>certificado digital</b> (Dia 4!), e um acordo de chaves estabelece a <b>chave simétrica da sessão</b> — o modelo híbrido do Dia 3 em ação. Ponto de prova (AL-AM 2025): <b>SSL 3.0, TLS 1.0 e 1.1 são versões obsoletas e vulneráveis</b> — mantê-las ativas expõe a ataques de downgrade e quebra de sigilo; o correto é exigir <b>TLS 1.2/1.3</b>.</p>
-    <p><b>3. Backup: tipos e a regra 3-2-1</b></p>
-    <table class="tabela">
-      <tr><th>Tipo</th><th>O que copia</th><th>Restauração</th></tr>
-      <tr><td><b>Completo</b></td><td>tudo, sempre</td><td>mais simples (1 cópia) — porém lento e pesado de gerar</td></tr>
-      <tr><td><b>Incremental</b></td><td>só o que mudou <b>desde o último backup (qualquer tipo)</b></td><td>precisa do completo + <b>toda a cadeia</b> de incrementais</td></tr>
-      <tr><td><b>Diferencial</b></td><td>o que mudou <b>desde o último COMPLETO</b></td><td>precisa do completo + <b>apenas o último</b> diferencial</td></tr>
-    </table>
-    <p>Vantagem do incremental: <b>menor tempo e espaço</b> por execução. E a <span class="gold">regra 3-2-1</span>: <b>3</b> cópias dos dados, em <b>2</b> mídias diferentes, com <b>1</b> fora do local (off-site) — a referência clássica contra ransomware e desastres.</p>
-    <p><b>4. Políticas de segurança e comportamento seguro</b></p>
-    <p>A FGV cobra o formato "analise as afirmativas" sobre políticas formais: <b>política de senhas</b> (periodicidade de troca, tamanho mínimo/máximo, composição), <b>política de backup</b> (tipos de mídia, frequência, período de retenção), <b>política de privacidade</b> (como as informações pessoais SÃO tratadas — a pegadinha é dizer que "não contempla"). E o comportamento seguro no serviço (TJ-SC 2026): acessar <b>apenas o estritamente necessário</b> (menor privilégio, Dia 21), <b>nunca compartilhar senha</b> (nem com colega "de confiança"), <b>bloquear a sessão</b> ao se ausentar (Win+L), não deixar listas com dados pessoais em áreas comuns.</p>
-    <div class="dica"><b>⚠️ Como a FGV cobra:</b> pseudonimização×anonimização pela reversibilidade (anonimizou = saiu da LGPD); TLS pelas versões seguras (1.2/1.3) × obsoletas (SSL 3.0/TLS 1.0/1.1); incremental×diferencial pela referência ("último backup" × "último completo") e a regra 3-2-1; políticas de segurança pelo "analise as afirmativas".</div>`,
-  aquecimento:[
-    {t:'O tratamento de dados que desvincula a informação do titular de forma IRREVERSÍVEL, fazendo o dado deixar de ser considerado pessoal para os fins da LGPD, é a:',a:['Pseudonimização','Tokenização de sessão','Codificação em Base64','Anonimização','Compactação'],c:3,w:['A pseudonimização é reversível — o dado continua pessoal e sob a LGPD.','Tokenização substitui dados por tokens, em regra com possibilidade de reversão controlada.','Base64 é mera codificação reversível — não protege nem anonimiza.','','Compactar reduz tamanho — não desvincula o titular.'],
-     e:'<b>Anonimização</b> = irreversível (por meios razoáveis) → o dado sai do alcance da LGPD. A pseudonimização mantém a reversão e continua na lei.'},
-    {t:'Na pseudonimização, o dado tratado:',a:['Continua sendo dado pessoal, pois a reversão é possível com informação mantida em separado','Deixa de ser dado pessoal e sai do alcance da LGPD','É destruído fisicamente','Torna-se público por definição','É automaticamente criptografado com chave pública'],c:0,w:['','Isso é a anonimização — a pseudonimização preserva a possibilidade de reidentificar.','Nada é destruído — o identificador é substituído por código.','Não se torna público — o objetivo é justamente reduzir a exposição.','Pseudonimizar não implica criptografia assimétrica.'],
-     e:'<b>Pseudonimizado = ainda pessoal.</b> A "tabela de correspondência" guardada em separado permite reverter — por isso a LGPD continua aplicável.'},
-    {t:'O protocolo que efetivamente cifra a comunicação no HTTPS, sucessor do SSL, é o:',a:['FTP','SMTP','TLS','DHCP','SNMP'],c:2,w:['FTP transfere arquivos (porta 21) — sem cifra nativa.','SMTP envia e-mail (porta 25).','','DHCP distribui IPs — não cifra.','SNMP gerencia dispositivos de rede.'],
-     e:'<b>HTTPS = HTTP sobre TLS.</b> O TLS (sucessor do SSL) faz o handshake, valida o certificado e estabelece a chave da sessão.'},
-    {t:'Um analista detecta que os servidores ainda aceitam SSL 3.0 e TLS 1.0/1.1. O risco principal e a conduta correta são:',a:['Nenhum risco; versões antigas são compatíveis e seguras','Apenas lentidão na conexão; basta aumentar a banda','Perda de compatibilidade com certificados A3','Bloqueio automático pelo firewall, sem ação necessária','Exposição a vulnerabilidades e ataques de downgrade; deve-se exigir TLS 1.2/1.3'],c:4,w:['Há risco real — essas versões têm falhas conhecidas.','O problema é segurança, não velocidade.','Certificados não dependem dessas versões antigas.','O firewall não corrige protocolo obsoleto sozinho.',''],
-     e:'SSL 3.0/TLS 1.0/1.1 = <b>obsoletos e vulneráveis</b> (inclusive a downgrade). Padrão correto: <b>TLS 1.2/1.3</b>. Caso real da FGV AL-AM 2025.'},
-    {t:'Sobre os tipos de backup, o INCREMENTAL copia:',a:['Sempre todos os dados','Somente o que mudou desde o último backup de qualquer tipo','Somente o que mudou desde o último backup COMPLETO','Apenas os arquivos do sistema operacional','Apenas os dados já criptografados'],c:1,w:['Copiar tudo é o backup completo.','','Mudanças desde o último COMPLETO = backup DIFERENCIAL — a pegadinha clássica.','Não se restringe a arquivos de sistema.','Independe de criptografia.'],
-     e:'<b>Incremental</b> = desde o ÚLTIMO backup (qualquer). <b>Diferencial</b> = desde o último COMPLETO. A referência é o que a banca troca.'}
+  "n": 24,
+  "data": "Extra II",
+  "topic": "LGPD, TLS, backup e políticas de segurança",
+  "meta": "Fechamento · Pseudonimização, TLS, cópias e comportamento seguro",
+  "recap": "<b>Fechamento operacional:</b> esta microaula separa anonimização de pseudonimização, mostra como o TLS protege o HTTPS, organiza os tipos de backup e reúne regras de comportamento seguro no serviço.",
+  "aula": "<h3>📖 Anonimização, pseudonimização e codificação</h3>\n<p><span class=\"gold\">Anonimização</span> aplica meios técnicos razoáveis para retirar a possibilidade de associação direta ou indireta com uma pessoa. Quando a reidentificação deixa de ser viável por meios razoáveis, o dado anonimizado não é tratado como dado pessoal nas condições legais aplicáveis. A avaliação depende do contexto, da tecnologia disponível e do risco de reversão.</p>\n<p><span class=\"gold\">Pseudonimização</span> substitui o identificador por código, apelido ou token, mantendo a informação adicional capaz de restabelecer a identidade em ambiente separado e controlado. Por isso, o dado pseudonimizado <b>continua sendo dado pessoal</b>. A técnica reduz exposição, mas não elimina a possibilidade de reidentificação por quem possui a correspondência.</p>\n<p><b>Base64</b> é codificação, não criptografia nem anonimização. Qualquer pessoa que reconheça o formato pode reverter a representação sem chave secreta. Hash, criptografia, tokenização e codificação também não são sinônimos; cada recurso possui finalidade e reversibilidade próprias.</p>\n<div class=\"dica\"><b>🔑 MACETE \"PSEUDO TEM PONTE; ANÔNIMO PERDE O CAMINHO\":</b> se existe tabela ou informação separada que permite voltar ao titular, é pseudonimização; se a associação deixa de ser razoavelmente possível, é anonimização.</div>\n<h3>📖 TLS e a proteção do HTTPS</h3>\n<p><b>HTTPS</b> é HTTP protegido por <span class=\"gold\">TLS</span>. No início da conexão ocorre o <b>handshake</b>: cliente e servidor negociam versão e algoritmos, o servidor apresenta certificado digital e as partes estabelecem segredos para a sessão. O certificado ajuda a autenticar o servidor e vincular uma chave pública à identidade declarada.</p>\n<p>A comunicação usa modelo híbrido. Mecanismos assimétricos e acordos de chave ajudam a autenticar e estabelecer segredos; depois, algoritmos simétricos protegem o tráfego da sessão com maior eficiência. A chave privada do servidor não é transmitida ao cliente. TLS oferece confidencialidade e integridade do canal, mas não garante que o conteúdo recebido seja verdadeiro ou livre de fraude.</p>\n<p>Versões antigas, como SSL 3.0 e TLS 1.0/1.1, devem ser desativadas em ambientes atuais. A configuração segura prioriza versões modernas, como TLS 1.2 e 1.3, e conjuntos criptográficos adequados. Manter protocolos obsoletos pode permitir downgrade ou exploração de vulnerabilidades conhecidas.</p>\n<div class=\"dica\"><b>🔑 MACETE \"HTTPS VIAJA NO TÚNEL TLS\":</b> HTTP leva a mensagem; TLS protege o caminho. O certificado identifica, o handshake combina parâmetros e a sessão usa cifra eficiente.</div>\n<h3>📖 Backup completo, incremental e diferencial</h3>\n<p>O backup <b>completo</b> copia todo o conjunto selecionado. Sua restauração é simples, mas a execução consome mais tempo e espaço. O backup <b>incremental</b> copia apenas o que mudou desde o último backup realizado, seja ele completo ou incremental. Cada execução tende a ser pequena, porém a restauração exige o completo inicial e toda a cadeia posterior.</p>\n<p>O backup <b>diferencial</b> copia tudo o que mudou desde o último backup completo. Ao longo dos dias, tende a crescer, porque acumula as mudanças desde a mesma referência. Para restaurar, normalmente bastam o completo e o diferencial mais recente. A diferença decisiva é a referência: último backup de qualquer tipo no incremental; último completo no diferencial.</p>\n<table class=\"tabela\"><tr><th>Tipo</th><th>Referência</th><th>Restauração</th></tr><tr><td><b>Completo</b></td><td>todo o conjunto</td><td>uma cópia principal</td></tr><tr><td><b>Incremental</b></td><td>último backup</td><td>completo + toda a cadeia</td></tr><tr><td><b>Diferencial</b></td><td>último completo</td><td>completo + último diferencial</td></tr></table>\n<div class=\"dica\"><b>🔑 MACETE \"INCREMENTAL ENCADEIA; DIFERENCIAL ACUMULA\":</b> incremental depende de cada elo desde o completo; diferencial acumula mudanças e usa apenas a versão mais recente na restauração.</div>\n<h3>📖 Regra 3-2-1 e resistência a incidentes</h3>\n<p>A regra <span class=\"gold\">3-2-1</span> recomenda manter <b>três cópias</b> dos dados, em <b>duas mídias ou tecnologias diferentes</b>, com <b>uma cópia fora do ambiente principal</b>. O objetivo é evitar que uma única falha, incêndio, furto ou ransomware destrua simultaneamente os dados de produção e todas as cópias.</p>\n<p>Uma cópia conectada permanentemente ao mesmo computador pode ser atingida pelo mesmo malware. Por isso, a estratégia deve incluir isolamento, controle de acesso, versionamento e testes de restauração. Backup não é sinônimo de sincronização: uma pasta sincronizada pode propagar exclusões e arquivos cifrados para todas as réplicas.</p>\n<div class=\"dica\"><b>🔑 MACETE \"TRÊS CÓPIAS, DOIS TIPOS, UMA LONGE\":</b> 3-2-1 reduz a chance de um único incidente alcançar produção, cópia local e cópia externa ao mesmo tempo.</div>\n<h3>📖 Políticas e comportamento seguro</h3>\n<p>Uma <b>política de senhas</b> define requisitos de tamanho, composição, bloqueio e gestão de credenciais. Uma <b>política de backup</b> estabelece frequência, retenção, responsabilidade, mídia e testes de restauração. Uma <b>política de privacidade</b> informa como dados pessoais são coletados, utilizados, compartilhados, protegidos e mantidos.</p>\n<p>No trabalho, prevalecem o <b>menor privilégio</b> e a necessidade de saber. O usuário deve acessar apenas o necessário, não compartilhar senha, bloquear a sessão ao se afastar e evitar deixar listas ou documentos com dados pessoais expostos. Credencial é individual e auditável; emprestá-la destrói a rastreabilidade das ações.</p>\n<div class=\"dica\"><b>🔑 MACETE \"SENHA É PESSOAL; SESSÃO VAZIA É SESSÃO TRAVADA\":</b> não empreste credenciais e use Win+L ao se afastar, mesmo por pouco tempo.</div>\n<h3>📌 Resumo em 30 segundos</h3>\n<p>Pseudonimização mantém caminho de volta; anonimização elimina a associação razoável. Base64 apenas codifica. HTTPS usa TLS, certificado e handshake; a chave privada não viaja. Incremental usa o último backup e exige a cadeia; diferencial usa o último completo e restaura com o mais recente. Regra 3-2-1: três cópias, duas mídias, uma fora. Acesso mínimo, senha individual e sessão bloqueada.</p>",
+  "aquecimento": [
+    {
+      "t": "A substituição de nomes por códigos, com tabela de correspondência guardada separadamente, caracteriza:",
+      "a": [
+        "Anonimização, porque elimina definitivamente a possibilidade de reidentificação",
+        "Pseudonimização, porque mantém caminho controlado para restabelecer a identidade",
+        "Codificação Base64, porque transforma qualquer dado em conteúdo protegido por chave",
+        "Compactação, porque reduz a exposição ao diminuir o tamanho do arquivo",
+        "Descarte seguro, porque destrói o identificador original e todas as cópias"
+      ],
+      "c": 1,
+      "w": [
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário."
+      ],
+      "e": "<b>Pseudonimização</b> substitui o identificador e mantém informação adicional capaz de reverter a associação. Por isso, o dado continua pessoal. Anonimização exige que a reidentificação deixe de ser razoavelmente possível. A presença da tabela separada é a pista decisiva para distinguir as duas técnicas.",
+      "peg": "conceito_vizinho"
+    },
+    {
+      "t": "Sobre Base64, assinale a afirmativa correta.",
+      "a": [
+        "É algoritmo de criptografia assimétrica que exige chave privada para decodificação",
+        "É técnica de anonimização irreversível que retira o dado do alcance das regras",
+        "É formato de codificação reversível, sem garantir sigilo ou anonimização",
+        "É protocolo de transporte seguro usado para substituir TLS em navegadores",
+        "É método de hash resistente a colisões empregado em assinaturas digitais"
+      ],
+      "c": 2,
+      "w": [
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário."
+      ],
+      "e": "<b>Base64 é codificação reversível</b> e não oferece, isoladamente, confidencialidade, integridade ou anonimização. Não utiliza chave secreta para decodificação e não substitui TLS, hash ou criptografia. A armadilha é atribuir efeito de segurança a uma simples mudança de representação do conteúdo.",
+      "peg": "recurso_finalidade"
+    },
+    {
+      "t": "No HTTPS, o protocolo responsável por proteger o canal de comunicação é o:",
+      "a": [
+        "SMTP, utilizado para entrega autenticada de páginas web",
+        "FTP, responsável por cifrar o conteúdo transmitido pelo navegador",
+        "DHCP, empregado para negociar certificados digitais do servidor",
+        "DNS, que estabelece a chave simétrica da sessão após resolver o domínio",
+        "TLS, que protege o HTTP durante a comunicação entre as partes"
+      ],
+      "c": 4,
+      "w": [
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        ""
+      ],
+      "e": "<b>HTTPS corresponde ao HTTP protegido por TLS.</b> O TLS negocia parâmetros, autentica o servidor por certificado e estabelece segredos da sessão. SMTP, FTP, DHCP e DNS possuem outras finalidades. A questão cobra o protocolo que protege o canal, não o serviço que resolve nomes ou distribui endereços.",
+      "peg": "recurso_finalidade"
+    },
+    {
+      "t": "O backup que copia somente as alterações desde o último backup realizado, de qualquer tipo, é o:",
+      "a": [
+        "Incremental, que utiliza como referência a execução imediatamente anterior",
+        "Diferencial, que utiliza como referência exclusiva o último backup completo",
+        "Completo, que repete todo o conjunto selecionado em cada execução",
+        "Espelhado, que preserva necessariamente todas as versões históricas dos arquivos",
+        "Off-site, que define conteúdo copiado e não apenas localização da cópia"
+      ],
+      "c": 0,
+      "w": [
+        "",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário."
+      ],
+      "e": "O backup <b>incremental</b> usa como referência o último backup realizado, seja completo ou incremental. O diferencial compara sempre com o último completo. A armadilha é trocar a referência temporal. “Off-site” descreve localização, enquanto completo, incremental e diferencial descrevem o conteúdo copiado.",
+      "peg": "regra_invertida"
+    }
   ],
-  selo:'Temas extraídos de provas reais FGV 2025/2026 (PC-PI Perito, TJ-SC, AL-AM, MPE-RJ, SEFAZ-BA). Questões adaptadas/parafraseadas com rótulo transparente; sem cópia literal. Comentário em todas as alternativas.',
-  fgv:[
-    {dif:'dificil',fonte:'Baseada em: FGV — 2026 — TJ-SC (adaptada)',t:'Para reduzir riscos de incidente com dados pessoais, um analista adotou duas ações: (1) substituiu os nomes dos titulares por códigos, mantendo em servidor apartado e controlado a tabela que permite reverter a substituição; (2) aplicou a um conjunto estatístico técnica que impossibilita, por meios razoáveis, reidentificar qualquer titular. As técnicas são, respectivamente:',a:['Anonimização e pseudonimização','Criptografia assimétrica e Base64','Tokenização de sessão e esteganografia','Pseudonimização e anonimização','Hash irreversível e compactação'],c:3,w:['Invertido: manter a tabela de reversão é pseudonimização; impossibilitar a reidentificação é anonimização.','Base64 não é técnica de proteção — é codificação reversível sem chave.','Esteganografia esconde dados em arquivos — não é o caso descrito.','','Compactação não protege dado pessoal.'],
-     e:'(1) reversível com tabela apartada = <b>pseudonimização</b> (continua na LGPD); (2) irreversível = <b>anonimização</b> (sai da LGPD). O "respectivamente" pune quem inverte.'},
-    {dif:'dificil',fonte:'Baseada em: FGV — 2025 — MPE-RJ / AL-AM (adaptada)',t:'Sobre a segurança da comunicação web, é correto afirmar que:',a:['O HTTPS corresponde ao HTTP sobre TLS, com handshake que valida o certificado do servidor e estabelece a chave da sessão','O HTTPS dispensa o TLS, pois cifra por conta própria','O TLS 1.0 e o SSL 3.0 permanecem recomendados por compatibilidade','O handshake TLS transmite a chave privada do servidor ao cliente','O HTTPS usa exclusivamente criptografia assimétrica durante toda a sessão'],c:0,w:['','O HTTPS É o HTTP sobre TLS — não dispensa.','SSL 3.0/TLS 1.0 são obsoletos e vulneráveis — recomenda-se TLS 1.2/1.3.','A chave privada JAMAIS é transmitida — o handshake acorda uma chave de sessão.','Após o handshake (assimétrico), a sessão usa cifra SIMÉTRICA — modelo híbrido.'],
-     e:'HTTPS = HTTP + <b>TLS</b>: handshake valida o certificado e estabelece a chave <b>simétrica de sessão</b> (modelo híbrido do Dia 3). A privada nunca viaja.'},
-    {dif:'dificil',fonte:'Baseada em: FGV — SEFAZ-BA (adaptada)',t:'Sobre políticas de segurança da informação, analise:\nI. A política de senhas define periodicidade de troca, tamanho mínimo e composição.\nII. A política de backup define tipos de mídia, frequência de execução e período de retenção das cópias.\nIII. A política de privacidade, por tratar de regras sociais, não contempla como as informações pessoais serão tratadas.\nEstá correto o que se afirma em:',a:['I, II e III','II e III, apenas','I e III, apenas','III, apenas','I e II, apenas'],c:4,w:['A III é falsa — derruba a alternativa.','A III é a falsa: a política de privacidade trata JUSTAMENTE de como os dados pessoais são tratados.','A III contamina a combinação.','A I e a II são verdadeiras, não só a III.',''],
-     e:'I ✓ e II ✓. <b>III falsa</b>: definir como as informações pessoais serão tratadas é a essência da política de privacidade — a negação é a pegadinha.'},
-    {dif:'dificil',fonte:'Baseada em: FGV — 2026 — TJ-SC (adaptada) + regra 3-2-1',t:'Uma delegacia estrutura sua proteção de dados assim: backup completo aos domingos; nos demais dias, cópia apenas do que mudou desde o último backup realizado (de qualquer tipo); três cópias no total, em duas mídias distintas, uma delas mantida fora do prédio. Sobre a estratégia:',a:['Os backups diários são diferenciais e a política viola a regra 3-2-1','Os backups diários são completos e a regra 3-2-1 exige quatro cópias','Os backups diários são incrementais e a política atende à regra 3-2-1','Os backups diários são incrementais, mas a regra 3-2-1 proíbe cópia fora do prédio','Os backups diários são diferenciais e a restauração exigirá apenas o último deles'],c:2,w:['Referência ao "último backup de qualquer tipo" = INCREMENTAL, não diferencial.','Diários que copiam só mudanças não são completos; e a regra é 3 cópias, não 4.','','A cópia off-site é justamente o "1" da regra — exigida, não proibida.','Além de ser incremental, a restauração do incremental exige a CADEIA toda, não só o último.'],
-     e:'"Desde o último backup (qualquer tipo)" = <b>incremental</b>. E 3 cópias + 2 mídias + 1 off-site = <b>regra 3-2-1</b> atendida. Restauração do incremental exige o completo + toda a cadeia.'}
+  "selo": "Questões inéditas e adaptadas em linguagem própria sobre LGPD, TLS, backup, regra 3-2-1 e políticas de segurança.",
+  "fgv": [
+    {
+      "t": "Durante o handshake TLS, é correto afirmar que:",
+      "a": [
+        "A chave privada do servidor é enviada ao cliente para permitir a verificação do certificado",
+        "As partes negociam parâmetros e estabelecem segredos sem transmitir a chave privada do servidor",
+        "O protocolo elimina a necessidade de certificados e de autenticação do servidor",
+        "Toda a sessão usa apenas criptografia assimétrica, sem algoritmos simétricos",
+        "O HTTP é substituído definitivamente por DNS depois do estabelecimento do canal"
+      ],
+      "c": 1,
+      "w": [
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário."
+      ],
+      "e": "No handshake, as partes negociam versão e algoritmos, validam o certificado e estabelecem segredos da sessão <b>sem transmitir a chave privada</b>. A proteção do tráfego usa algoritmos simétricos por eficiência. TLS não elimina autenticação e não substitui HTTP por DNS; ele protege o canal sobre o qual o HTTP trafega.",
+      "peg": "agente",
+      "dif": "dificil",
+      "fonte": "Questão inédita no estilo FGV"
+    },
+    {
+      "t": "Uma rotina realiza completo no domingo e, nos demais dias, copia tudo que mudou desde o domingo. Trata-se de:",
+      "a": [
+        "Backup incremental, porque cada dia depende apenas do dia imediatamente anterior",
+        "Backup completo, porque todas as mudanças da semana são copiadas novamente",
+        "Backup diferencial, porque a referência permanece o último backup completo",
+        "Sincronização, porque nenhuma restauração exige a cópia de domingo",
+        "Backup off-site, porque a periodicidade define automaticamente o local externo"
+      ],
+      "c": 2,
+      "w": [
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário."
+      ],
+      "e": "O cenário descreve <b>backup diferencial</b>, pois todas as execuções comparam os dados com o último completo, realizado no domingo. O volume tende a crescer até o próximo completo. No incremental, cada dia usaria a execução imediatamente anterior e a restauração dependeria de toda a cadeia.",
+      "peg": "regra_invertida",
+      "dif": "dificil",
+      "fonte": "Questão inédita no estilo FGV"
+    },
+    {
+      "t": "A regra 3-2-1 recomenda:",
+      "a": [
+        "Três cópias, em duas mídias ou tecnologias, com uma cópia fora do ambiente principal",
+        "Três usuários administradores, duas senhas por usuário e uma conta compartilhada",
+        "Três backups completos diários, dois incrementais e um diferencial obrigatório",
+        "Três servidores no mesmo rack, dois discos por servidor e uma pasta sincronizada",
+        "Três certificados, duas chaves privadas e uma chave pública para cada arquivo"
+      ],
+      "c": 0,
+      "w": [
+        "",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário."
+      ],
+      "e": "A regra <b>3-2-1</b> orienta três cópias dos dados, em duas mídias ou tecnologias diferentes, com uma cópia off-site. Ela reduz falhas correlacionadas. Não define quantidade de administradores, tipos obrigatórios de backup ou chaves criptográficas. A palavra-chave é diversidade e separação física ou lógica das cópias.",
+      "peg": "alcance",
+      "dif": "dificil",
+      "fonte": "Questão inédita no estilo FGV"
+    },
+    {
+      "t": "Sobre políticas de segurança, assinale a afirmativa correta.",
+      "a": [
+        "A política de privacidade não deve explicar como dados pessoais são tratados",
+        "A política de backup restringe-se ao nome do software utilizado na cópia",
+        "A política de senhas exige compartilhamento com a chefia para evitar bloqueios",
+        "Credenciais devem ser individuais e a sessão deve ser bloqueada ao afastar-se",
+        "Menor privilégio autoriza acesso preventivo a todos os dados disponíveis"
+      ],
+      "c": 3,
+      "w": [
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário."
+      ],
+      "e": "Credenciais individuais preservam a responsabilização, e a sessão deve ser bloqueada quando o usuário se afasta. Política de privacidade trata justamente do uso de dados pessoais; política de backup inclui frequência, retenção e testes; menor privilégio restringe acessos. A alternativa correta combina rastreabilidade e proteção operacional.",
+      "peg": "absoluto",
+      "dif": "dificil",
+      "fonte": "Questão inédita no estilo FGV"
+    }
+  ],
+  "seloExtrema": "Bloco de dificuldade máxima integrando reversibilidade, cadeia de restauração e limites da proteção TLS.",
+  "extrema": [
+    {
+      "t": "Considere: I. pseudonimização preserva informação adicional para reidentificação; II. anonimização torna a associação inviável por meios razoáveis; III. Base64 garante sigilo criptográfico. Está correto:",
+      "a": [
+        "I, apenas, porque anonimização e codificação são sempre reversíveis",
+        "II, apenas, porque pseudonimização elimina qualquer relação com o titular",
+        "I e II, apenas, porque Base64 é codificação e não garante sigilo",
+        "I e III, apenas, porque anonimização mantém tabela separada de reversão",
+        "I, II e III, porque toda transformação de dados produz confidencialidade"
+      ],
+      "c": 2,
+      "w": [
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário."
+      ],
+      "e": "As afirmativas <b>I e II</b> estão corretas. Pseudonimização mantém a possibilidade controlada de reidentificação; anonimização elimina a associação razoável. A III é falsa porque Base64 apenas codifica e pode ser revertido sem chave. A questão mistura três técnicas visualmente semelhantes, mas com efeitos jurídicos e técnicos distintos.",
+      "peg": "conceito_vizinho",
+      "dif": "dificil",
+      "fonte": "Questão inédita - FGV Extrema"
+    },
+    {
+      "t": "Para restaurar uma sequência com completo no domingo e incrementais de segunda a quarta, são necessários:",
+      "a": [
+        "Somente o completo de domingo, porque incrementais são descartáveis após a criação",
+        "O completo de domingo e apenas o incremental de quarta-feira",
+        "Somente os incrementais de segunda, terça e quarta, sem a base completa",
+        "O completo de domingo e toda a cadeia incremental de segunda a quarta",
+        "O diferencial de quarta e qualquer cópia externa, mesmo sem o completo"
+      ],
+      "c": 3,
+      "w": [
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário."
+      ],
+      "e": "A restauração incremental exige o <b>backup completo base e todos os incrementais em ordem</b>. Cada incremental contém apenas mudanças desde a execução anterior; perder um elo pode impedir a reconstrução correta. A alternativa que usa apenas o último incremental corresponde à lógica de restauração do diferencial, não do incremental.",
+      "peg": "regra_invertida",
+      "dif": "dificil",
+      "fonte": "Questão inédita - FGV Extrema"
+    },
+    {
+      "t": "Uma página usa HTTPS válido, mas apresenta informação fraudulenta publicada pelo próprio servidor. A conclusão correta é:",
+      "a": [
+        "TLS garante que todo conteúdo publicado pelo servidor seja verdadeiro e lícito",
+        "O certificado impede tecnicamente qualquer fraude praticada pelo titular do domínio",
+        "HTTPS protege o canal, mas não atesta a veracidade material de todo conteúdo",
+        "A existência de TLS transforma o site automaticamente em autoridade pública",
+        "A criptografia do transporte substitui análise de reputação e validação do serviço"
+      ],
+      "c": 2,
+      "w": [
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário.",
+        "A alternativa não corresponde ao conceito central descrito no enunciado; compare a função específica indicada com a definição correta apresentada no comentário."
+      ],
+      "e": "<b>TLS protege confidencialidade, integridade em trânsito e autenticação do endpoint conforme o certificado</b>, mas não certifica a veracidade material do conteúdo publicado. Um canal seguro pode transportar informação falsa. A armadilha é ampliar a finalidade do protocolo além do seu alcance técnico e tratar segurança do transporte como confiabilidade do conteúdo.",
+      "peg": "alcance",
+      "dif": "dificil",
+      "fonte": "Questão inédita - FGV Extrema"
+    }
   ]
 },
 {
