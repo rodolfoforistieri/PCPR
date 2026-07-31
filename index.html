@@ -154,7 +154,7 @@ h1{font-family:'Saira Condensed';font-weight:800;font-size:28px;text-transform:u
     <div class="subj-card" onclick="openTecnologia()">
       <div class="si">💻</div>
       <div class="mc-b"><div class="st">Tecnologia &amp; Cibersegurança<span class="subj-pill done">completa</span></div>
-      <div class="ss">37 microaulas · 5 simulados · 480 questões · 25 pontos na prova</div></div>
+      <div class="ss">37 microaulas · 5 simulados · <span id="tec-card-count">...</span> questões · 25 pontos na prova</div></div>
       <div class="card-arrow">›</div>
     </div>
     <div class="sec-label">Conhecimentos Gerais</div>
@@ -414,8 +414,8 @@ h1{font-family:'Saira Condensed';font-weight:800;font-size:28px;text-transform:u
   <div class="dia">
     <div class="dia-head" style="border-left-color:#C0392B">
       <span class="dia-num" style="color:#C0392B">Simulado FINAL</span>
-      <div class="dia-title">Toda a Tecnologia — 25 questões</div>
-      <span class="dia-date">SÓ DIFÍCEIS · 37 microaulas · T1.1 a T8.2 · meta: 17/25</span>
+      <div class="dia-title">Toda a Tecnologia — 37 questões</div>
+      <span class="dia-date">SÓ DIFÍCEIS · 37 microaulas · T1.1 a T8.2 · meta: 25/37</span>
     </div>
     <div class="recap" style="border-color:#C0392B;color:#EBD5B8"><b style="color:#C0392B">Prova geral:</b> mistura as 37 microaulas de Tecnologia num único desafio, no nível real da FGV — com questões adaptadas e inéditas sobre toda a trilha. É o seu termômetro final antes da prova. Comentário em todas as alternativas.</div>
     <div id="simF-body"></div>
@@ -18402,337 +18402,337 @@ const CDIAS=[
     }
   ];
 const SIMCON=[
-    {
-      "dif": "dificil",
-      "fonte": "Simulado C1 · integração das cinco aulas",
-      "peg": "calculo_leitor",
-      "t": "Entidade apresenta: Caixa R$ 25.000; Clientes R$ 75.000; Estoques R$ 60.000; Imobilizado R$ 300.000; Depreciação Acumulada R$ 80.000; Fornecedores R$ 95.000; Financiamento de longo prazo R$ 145.000. O Patrimônio Líquido é de:",
-      "a": [
-        "R$ 140.000, apurado pela diferença entre ativo líquido e obrigações",
-        "R$ 220.000, considerando o imobilizado por seu valor bruto de aquisição",
-        "R$ 460.000, correspondente ao total do ativo antes das deduções",
-        "R$ 60.000, deduzindo novamente a depreciação do resultado apurado",
-        "R$ 315.000, desconsiderando o financiamento de longo prazo contratado"
-      ],
-      "c": 0,
-      "w": [
-        "",
-        "A depreciação acumulada precisa ser deduzida do imobilizado antes da soma.",
-        "Esse valor corresponde ao ativo bruto, sem qualquer dedução de obrigações.",
-        "A depreciação já foi considerada uma vez; nova dedução duplica o efeito.",
-        "O financiamento é obrigação exigível e deve ser deduzido do ativo total."
-      ],
-      "e": "Ativo = 25.000 + 75.000 + 60.000 + (300.000 − 80.000) = R$ 380.000. Passivo = 95.000 + 145.000 = R$ 240.000. PL = 380.000 − 240.000 = R$ 140.000. A pegadinha era B, que usa o imobilizado bruto. Abata a depreciação antes de somar o Ativo."
-    },
-    {
-      "dif": "dificil",
-      "fonte": "Simulado C1 · integração das cinco aulas",
-      "peg": "numero_trocado",
-      "t": "Contrato de assessoria de R$ 48.000 tem vigência de 24 meses, iniciada em 01/11/2025, com apropriação linear. No resultado do exercício encerrado em 31/12/2025, a despesa reconhecida é de:",
-      "a": [
-        "R$ 4.000, correspondente a dois meses de vigência no exercício",
-        "R$ 48.000, pelo reconhecimento integral no exercício da contratação",
-        "R$ 24.000, correspondente à metade do prazo contratual pactuado",
-        "R$ 2.000, correspondente a um único mês de apropriação linear",
-        "zero, porque a vigência se estende para o exercício seguinte"
-      ],
-      "c": 0,
-      "w": [
-        "",
-        "A apropriação distribui o valor pelos vinte e quatro meses de vigência.",
-        "Metade do prazo só se completaria muito além do exercício examinado.",
-        "A vigência abrange novembro e dezembro, e não apenas um único mês.",
-        "A vigência iniciou em novembro, gerando despesa já no exercício corrente."
-      ],
-      "e": "Parcela mensal = 48.000 ÷ 24 = R$ 2.000. Novembro e dezembro somam dois meses: 2 × 2.000 = R$ 4.000. A pegadinha era D, que aprecia um mês só. Ache a parcela mensal e conte os meses de vigência dentro do exercício."
-    },
-    {
-      "dif": "dificil",
-      "fonte": "Simulado C1 · integração das cinco aulas",
-      "peg": "conceito_vizinho",
-      "t": "Uma entidade recebe R$ 90.000 de empréstimo bancário e, no mesmo dia, adquire à vista equipamento de R$ 90.000. Considerados apenas esses dois fatos, o Patrimônio Líquido:",
-      "a": [
-        "aumenta em R$ 90.000, pelo ingresso de recursos no caixa",
-        "diminui em R$ 90.000, pela saída de recursos na aquisição",
-        "aumenta em R$ 180.000, pela soma dos dois fatos ocorridos",
-        "permanece inalterado, pois nenhum dos fatos afeta o resultado",
-        "diminui em R$ 180.000, por dupla movimentação patrimonial"
-      ],
-      "c": 3,
-      "w": [
-        "O empréstimo aumenta Ativo e Passivo simultaneamente, sem tocar no PL.",
-        "A compra à vista troca caixa por equipamento, sem gerar despesa alguma.",
-        "Nenhum dos dois fatos é receita, de modo que o PL não pode aumentar.",
-        "",
-        "Nenhum dos dois fatos configura despesa capaz de reduzir o capital próprio."
-      ],
-      "e": "O empréstimo é permutativo entre Ativo e Passivo; a compra à vista é permutativa dentro do Ativo. Nenhum dos dois é receita ou despesa, logo o PL não se altera. A pegadinha era A, que trata captação como ganho. Pergunte sempre se houve receita ou despesa."
-    },
-    {
-      "dif": "dificil",
-      "fonte": "Simulado C1 · integração das cinco aulas",
-      "peg": "calculo_leitor",
-      "t": "Receita bruta de R$ 750.000; devoluções de R$ 25.000; tributos sobre vendas de R$ 95.000; estoque inicial de R$ 50.000; compras de R$ 420.000; estoque final de R$ 70.000. O lucro bruto é de:",
-      "a": [
-        "R$ 210.000, deduzindo as compras integrais da receita líquida apurada",
-        "R$ 280.000, desconsiderando a variação de estoques no período",
-        "R$ 630.000, deduzindo somente os tributos incidentes sobre vendas",
-        "R$ 230.000, resultado da receita líquida menos o custo das vendas",
-        "R$ 185.000, deduzindo também devoluções do custo das mercadorias"
-      ],
-      "c": 3,
-      "w": [
-        "As compras não equivalem ao CMV, que depende dos estoques inicial e final.",
-        "A variação dos estoques é indispensável para apurar corretamente o custo.",
-        "As devoluções também compõem as deduções da receita bruta do período.",
-        "",
-        "Devoluções deduzem a receita, e não o custo das mercadorias vendidas."
-      ],
-      "e": "Receita líquida = 750.000 − 25.000 − 95.000 = R$ 630.000. CMV = 50.000 + 420.000 − 70.000 = R$ 400.000. Lucro bruto = 630.000 − 400.000 = R$ 230.000. A pegadinha era A, que usa as compras (R$ 420.000) como se fossem o custo. Faça as duas contas separadamente antes de subtrair."
-    },
-    {
-      "dif": "dificil",
-      "fonte": "Simulado C1 · integração das cinco aulas",
-      "peg": "agente",
-      "t": "Em análise de duas contas, verificam-se adiantamento concedido a fornecedor de R$ 30.000 e adiantamento recebido de cliente de R$ 45.000. A classificação correta é, respectivamente:",
-      "a": [
-        "passivo circulante e ativo circulante, conforme a ordem dos desembolsos",
-        "ativo circulante e passivo circulante, conforme quem deve a prestação",
-        "ambos no ativo circulante, por envolverem valores já movimentados",
-        "ambos no passivo circulante, por decorrerem de contratos pendentes",
-        "ativo não circulante e passivo não circulante, por dependerem de entrega"
-      ],
-      "c": 1,
-      "w": [
-        "A ordem está invertida: quem adiantou ao fornecedor detém direito, não dívida.",
-        "",
-        "O adiantamento recebido gera obrigação de entregar, e não direito a receber.",
-        "O adiantamento concedido gera direito de exigir a mercadoria contratada.",
-        "As prestações são de curto prazo, atraindo classificação em circulante."
-      ],
-      "e": "Quem adianta ao fornecedor passa a ter direito de receber a mercadoria (Ativo); quem recebe adiantado do cliente assume obrigação de entregar (Passivo). A pegadinha era A, que inverte os papéis. Identifique quem ainda deve a prestação, não quem pagou."
-    },
-    {
-      "dif": "extrema",
-      "fonte": "Simulado C1 · integração das cinco aulas",
-      "peg": "regra_invertida",
-      "t": "Mantidos o estoque inicial e as compras, o aumento do estoque final registrado produz, sobre o CMV e o lucro bruto, respectivamente, os efeitos de:",
-      "a": [
-        "aumento e redução, pela maior saída de mercadorias no período",
-        "aumento e aumento, por elevação simultânea dos dois indicadores",
-        "redução e redução, pelo menor volume geral de operações",
-        "redução e aumento, pela menor saída de mercadorias apurada",
-        "nenhum efeito, por se tratar de conta exclusivamente patrimonial"
-      ],
-      "c": 3,
-      "w": [
-        "Estoque final maior significa menor saída, o que reduz o CMV do período.",
-        "Se o CMV diminui, o lucro bruto aumenta; os dois não crescem juntos.",
-        "A redução do CMV eleva o lucro bruto, e não o reduz junto com o custo.",
-        "",
-        "O estoque final integra a fórmula do CMV e afeta diretamente o resultado."
-      ],
-      "e": "CMV = inicial + compras − final: elevar o estoque final reduz o CMV, e CMV menor eleva o lucro bruto. É exatamente o mecanismo explorado na superavaliação fraudulenta de estoques. Refaça a fórmula com um número maior no final."
-    },
-    {
-      "dif": "extrema",
-      "fonte": "Simulado C1 · integração das cinco aulas",
-      "peg": "condicionalidade",
-      "t": "Dívida classificada em 31/12/2024 como passivo não circulante teve o vencimento antecipado, por renegociação concluída em dezembro de 2024, para agosto de 2025. No Balanço de 31/12/2024, a dívida figura no:",
-      "a": [
-        "passivo não circulante, pela classificação original do contrato firmado",
-        "patrimônio líquido, em razão da repactuação havida com o credor",
-        "ativo circulante, por gerar direito decorrente da renegociação",
-        "resultado do exercício, como despesa financeira antecipada do período",
-        "passivo circulante, pois passou a vencer dentro de doze meses"
-      ],
-      "c": 4,
-      "w": [
-        "A classificação segue o vencimento vigente na data do Balanço, não o original.",
-        "Renegociar prazo não converte dívida com terceiro em capital próprio.",
-        "A entidade permanece devedora; nenhum direito a receber é criado.",
-        "A dívida é saldo patrimonial e permanece no Balanço, não no resultado.",
-        ""
-      ],
-      "e": "A classificação observa o prazo efetivo na data do Balanço: agosto de 2025 está dentro de doze meses, logo Passivo Circulante. A pegadinha era A, que congela a classificação inicial. Use sempre o vencimento vigente na data-base."
-    },
-    {
-      "dif": "extrema",
-      "fonte": "Simulado C1 · integração das cinco aulas",
-      "peg": "calculo_leitor",
-      "t": "Produto vendido por R$ 120, com custo variável unitário de R$ 70 e custos fixos mensais de R$ 90.000. O ponto de equilíbrio, em unidades, é de:",
-      "a": [
-        "1.800 unidades, dividindo os custos fixos pela margem de contribuição",
-        "750 unidades, dividindo os custos fixos pelo preço de venda unitário",
-        "1.286 unidades, dividindo os custos fixos pelo custo variável unitário",
-        "8.400 unidades, multiplicando margem unitária e custos fixos totais",
-        "2.400 unidades, somando preço e custo variável antes da divisão"
-      ],
-      "c": 0,
-      "w": [
-        "",
-        "O divisor correto é a margem de contribuição, e não o preço integral.",
-        "O custo variável isolado não mede a contribuição de cada unidade vendida.",
-        "O ponto de equilíbrio decorre de divisão, jamais de multiplicação.",
-        "Preço e custo variável devem ser subtraídos para obter a margem unitária."
-      ],
-      "e": "MC unitária = 120 − 70 = R$ 50. PE = 90.000 ÷ 50 = 1.800 unidades. Conferindo: 1.800 × 50 = R$ 90.000, exatamente os custos fixos. A pegadinha era A, que divide pelo preço. Calcule a margem antes de dividir."
-    },
-    {
-      "dif": "extrema",
-      "fonte": "Simulado C1 · integração das cinco aulas",
-      "peg": "conceito_vizinho",
-      "t": "Entidade é ré em ação com perda classificada como provável e valor estimável em R$ 120.000. O tratamento contábil adequado é:",
-      "a": [
-        "apenas divulgar em nota explicativa, sem qualquer registro contábil",
-        "constituir reserva específica dentro do patrimônio líquido da entidade",
-        "registrar o valor como despesa antecipada no ativo circulante",
-        "aguardar o trânsito em julgado para qualquer reconhecimento contábil",
-        "constituir provisão no passivo, com despesa correspondente no resultado"
-      ],
-      "c": 4,
-      "w": [
-        "A mera divulgação cabe à perda possível; a provável exige reconhecimento.",
-        "Reserva é destinação de lucro e não substitui o registro de obrigação.",
-        "Não houve desembolso antecipado; trata-se de obrigação futura provável.",
-        "A competência não condiciona o reconhecimento ao desfecho definitivo.",
-        ""
-      ],
-      "e": "Perda provável com valor estimável exige provisão no Passivo e despesa no resultado. A pegadinha era B, que aplica o tratamento da perda possível. Localize o grau de probabilidade: provável registra, possível divulga, remoto ignora."
-    },
-    {
-      "dif": "extrema",
-      "fonte": "Simulado C1 · integração das cinco aulas",
-      "peg": "absoluto",
-      "t": "Sobre a liquidez corrente utilizada em análise patrimonial, assinale a afirmativa correta.",
-      "a": [
-        "Índice superior a 1 garante a solvência da entidade em qualquer prazo",
-        "Índice inferior a 1 comprova a insolvência definitiva da sociedade",
-        "O índice mede cobertura do curto prazo, sem assegurar capacidade futura",
-        "O índice dispensa a análise das demais demonstrações contábeis",
-        "O índice aplica-se somente a entidades sem finalidade lucrativa"
-      ],
-      "c": 2,
-      "w": [
-        "Cobertura de curto prazo não garante o cumprimento de obrigações futuras.",
-        "Índice abaixo de 1 sinaliza aperto, mas não comprova insolvência definitiva.",
-        "",
-        "Índices são complementares e não substituem Balanço e demonstração de resultado.",
-        "Qualquer entidade que elabore demonstrações pode ter seus índices calculados."
-      ],
-      "e": "A liquidez corrente relaciona apenas ativo e passivo circulantes, sem projetar capacidade futura. As pegadinhas eram A e B, que convertem indicador parcial em prova. Varra verbos categóricos como 'garante' e 'comprova'."
-    },
-    {
-      "dif": "extrema",
-      "fonte": "Simulado C1 · integração das cinco aulas",
-      "peg": "parte_pelo_todo",
-      "t": "Ao examinar demonstrações de uma sociedade, o analista observa lucro bruto expressivo e prejuízo líquido no mesmo exercício. Essa combinação indica que:",
-      "a": [
-        "despesas operacionais, resultado financeiro ou tributos superaram o lucro bruto",
-        "houve necessariamente erro na apuração do custo das mercadorias vendidas",
-        "a receita bruta foi integralmente consumida pelas devoluções do período",
-        "o estoque final foi subavaliado, elevando artificialmente o custo apurado",
-        "a entidade não registrou qualquer receita ao longo do exercício examinado"
-      ],
-      "c": 0,
-      "w": [
-        "",
-        "A combinação é plenamente possível sem qualquer erro de escrituração.",
-        "Lucro bruto expressivo pressupõe receita líquida relevante após deduções.",
-        "Estoque subavaliado elevaria o CMV e reduziria justamente o lucro bruto.",
-        "Sem receita não haveria lucro bruto expressivo a ser apurado no período."
-      ],
-      "e": "Entre o lucro bruto e o lucro líquido ainda entram despesas operacionais, resultado financeiro e tributos. A pegadinha era A, que trata a situação como erro. Percorra os degraus da DRE entre os dois valores."
-    },
-    {
-      "dif": "extrema",
-      "fonte": "Simulado C1 · integração das cinco aulas",
-      "peg": "regra_invertida",
-      "t": "Quanto à natureza de saldo, as contas de Despesa e as contas do Passivo são, respectivamente:",
-      "a": [
-        "devedora e credora, conforme o método das partidas dobradas",
-        "credora e devedora, invertendo-se apenas no encerramento do exercício",
-        "ambas devedoras, por representarem consumo de recursos da entidade",
-        "ambas credoras, por comporem obrigações da entidade com terceiros",
-        "indefinidas, pois dependem do porte e do regime tributário adotado"
-      ],
-      "c": 0,
-      "w": [
-        "",
-        "A ordem está invertida: despesa é devedora e passivo é credora.",
-        "Contas do Passivo têm natureza credora e aumentam por crédito.",
-        "Despesa tem natureza devedora e aumenta por débito no lançamento.",
-        "A natureza decorre do grupo contábil, não do porte da entidade."
-      ],
-      "e": "Despesa aumenta por débito (natureza devedora) e Passivo aumenta por crédito (natureza credora). A pegadinha era A, que apresenta a regra certa com os termos trocados. Guarde: Ativo e Despesa à esquerda; Passivo, PL e Receita à direita."
-    },
-    {
-      "dif": "extrema",
-      "fonte": "Simulado C1 · integração das cinco aulas",
-      "peg": "recurso_finalidade",
-      "t": "Para verificar toda a movimentação da conta Clientes ao longo de um exercício, o livro contábil adequado é o:",
-      "a": [
-        "Diário, por reunir os fatos na ordem cronológica em que ocorreram",
-        "Razão, por agrupar todos os lançamentos referentes a cada conta",
-        "Caixa, por registrar exclusivamente as entradas e saídas de numerário",
-        "Inventário, por relacionar os bens existentes em determinada data-base",
-        "Registro de Duplicatas, por controlar apenas os títulos emitidos"
-      ],
-      "c": 1,
-      "w": [
-        "O Diário apresentaria os lançamentos misturados aos demais fatos do período.",
-        "",
-        "O livro Caixa controla numerário e não reúne a movimentação com clientes.",
-        "O Inventário relaciona bens em uma data, sem histórico de movimentação.",
-        "O controle de duplicatas não abrange todos os lançamentos da conta."
-      ],
-      "e": "O Razão agrupa por conta, permitindo acompanhar toda a movimentação de Clientes. A pegadinha era A, que oferece o livro mais conhecido, com organização inadequada à pergunta. Diário é por dia; Razão é por conta."
-    },
-    {
-      "dif": "extrema",
-      "fonte": "Simulado C1 · integração das cinco aulas",
-      "peg": "verdade_externa",
-      "t": "Constatado crescimento patrimonial expressivo sem receita declarada compatível no mesmo período, a leitura contábil adequada é que o achado:",
-      "a": [
-        "comprova automaticamente a prática de crime contra a ordem tributária",
-        "constitui incoerência entre grandezas e exige verificação da origem",
-        "é irrelevante, pois patrimônio e receita são grandezas independentes",
-        "indica necessariamente erro material na escrituração do exercício",
-        "demonstra que a entidade operou abaixo do seu ponto de equilíbrio"
-      ],
-      "c": 1,
-      "w": [
-        "O achado é indício e demanda apuração; não substitui a prova do delito.",
-        "",
-        "Patrimônio e resultado guardam relação direta, pois o lucro retido alimenta o PL.",
-        "A incompatibilidade pode decorrer de ingresso não declarado, e não só de erro.",
-        "Ponto de equilíbrio mede relação entre custos e volume, não origem patrimonial."
-      ],
-      "e": "Crescimento patrimonial sem receita compatível é incoerência entre grandezas e funciona como indício, exigindo verificação da origem dos recursos. A pegadinha era A, que salta do indício para a conclusão jurídica. Separe achado contábil de conclusão penal."
-    },
-    {
-      "dif": "extrema",
-      "fonte": "Simulado C1 · integração das cinco aulas",
-      "peg": "conceito_vizinho",
-      "t": "O registro, na contabilidade da sociedade, da aquisição de imóvel destinado ao uso pessoal exclusivo do sócio viola diretamente o princípio da:",
-      "a": [
-        "continuidade das operações da entidade ao longo do tempo",
-        "entidade, que separa o patrimônio da sociedade e o do sócio",
-        "prudência na mensuração de ativos e passivos incertos",
-        "oportunidade quanto ao registro tempestivo dos fatos contábeis",
-        "competência quanto ao período de reconhecimento da operação"
-      ],
-      "c": 1,
-      "w": [
-        "A continuidade trata da presunção de prosseguimento das atividades.",
-        "",
-        "A prudência orienta a mensuração diante de incerteza entre estimativas.",
-        "A oportunidade refere-se ao momento do registro, não à titularidade do bem.",
-        "A competência define o período de reconhecimento, não a separação patrimonial."
-      ],
-      "e": "O princípio da entidade exige separação entre o patrimônio da pessoa jurídica e o de seus sócios; registrar bem de uso pessoal no ativo da empresa é confusão patrimonial. A pegadinha era D. Identifique o sintoma: houve mistura de patrimônios."
-    }
-  ];
+  {
+    "dif": "dificil",
+    "fonte": "Simulado C1 · integração das cinco aulas",
+    "peg": "calculo_leitor",
+    "t": "Entidade apresenta: Caixa R$ 25.000; Clientes R$ 75.000; Estoques R$ 60.000; Imobilizado R$ 300.000; Depreciação Acumulada R$ 80.000; Fornecedores R$ 95.000; Financiamento de longo prazo R$ 145.000. O Patrimônio Líquido é de:",
+    "a": [
+      "R$ 140.000, apurado pela diferença entre ativo líquido e obrigações",
+      "R$ 220.000, considerando o imobilizado por seu valor bruto de aquisição",
+      "R$ 460.000, correspondente ao total do ativo antes das deduções",
+      "R$ 60.000, deduzindo novamente a depreciação do resultado apurado",
+      "R$ 315.000, desconsiderando o financiamento de longo prazo contratado"
+    ],
+    "c": 0,
+    "w": [
+      "",
+      "A depreciação acumulada precisa ser deduzida do imobilizado antes da soma.",
+      "Esse valor corresponde ao ativo bruto, sem qualquer dedução de obrigações.",
+      "A depreciação já foi considerada uma vez; nova dedução duplica o efeito.",
+      "O financiamento é obrigação exigível e deve ser deduzido do ativo total."
+    ],
+    "e": "Ativo = 25.000 + 75.000 + 60.000 + (300.000 − 80.000) = R$ 380.000. Passivo = 95.000 + 145.000 = R$ 240.000. PL = 380.000 − 240.000 = R$ 140.000. A pegadinha era B, que usa o imobilizado bruto. Abata a depreciação antes de somar o Ativo."
+  },
+  {
+    "dif": "dificil",
+    "fonte": "Simulado C1 · integração das cinco aulas",
+    "peg": "numero_trocado",
+    "t": "Contrato de assessoria de R$ 48.000 tem vigência de 24 meses, iniciada em 01/11/2025, com apropriação linear. No resultado do exercício encerrado em 31/12/2025, a despesa reconhecida é de:",
+    "a": [
+      "R$ 48.000, pelo reconhecimento integral no exercício da contratação",
+      "R$ 4.000, correspondente a dois meses de vigência no exercício",
+      "R$ 24.000, correspondente à metade do prazo contratual pactuado",
+      "R$ 2.000, correspondente a um único mês de apropriação linear",
+      "zero, porque a vigência se estende para o exercício seguinte"
+    ],
+    "c": 1,
+    "w": [
+      "A apropriação distribui o valor pelos vinte e quatro meses de vigência.",
+      "",
+      "Metade do prazo só se completaria muito além do exercício examinado.",
+      "A vigência abrange novembro e dezembro, e não apenas um único mês.",
+      "A vigência iniciou em novembro, gerando despesa já no exercício corrente."
+    ],
+    "e": "Parcela mensal = 48.000 ÷ 24 = R$ 2.000. Novembro e dezembro somam dois meses: 2 × 2.000 = R$ 4.000. A pegadinha era D, que aprecia um mês só. Ache a parcela mensal e conte os meses de vigência dentro do exercício."
+  },
+  {
+    "dif": "dificil",
+    "fonte": "Simulado C1 · integração das cinco aulas",
+    "peg": "conceito_vizinho",
+    "t": "Uma entidade recebe R$ 90.000 de empréstimo bancário e, no mesmo dia, adquire à vista equipamento de R$ 90.000. Considerados apenas esses dois fatos, o Patrimônio Líquido:",
+    "a": [
+      "aumenta em R$ 90.000, pelo ingresso de recursos no caixa",
+      "diminui em R$ 90.000, pela saída de recursos na aquisição",
+      "permanece inalterado, pois nenhum dos fatos afeta o resultado",
+      "aumenta em R$ 180.000, pela soma dos dois fatos ocorridos",
+      "diminui em R$ 180.000, por dupla movimentação patrimonial"
+    ],
+    "c": 2,
+    "w": [
+      "O empréstimo aumenta Ativo e Passivo simultaneamente, sem tocar no PL.",
+      "A compra à vista troca caixa por equipamento, sem gerar despesa alguma.",
+      "",
+      "Nenhum dos dois fatos é receita, de modo que o PL não pode aumentar.",
+      "Nenhum dos dois fatos configura despesa capaz de reduzir o capital próprio."
+    ],
+    "e": "O empréstimo é permutativo entre Ativo e Passivo; a compra à vista é permutativa dentro do Ativo. Nenhum dos dois é receita ou despesa, logo o PL não se altera. A pegadinha era A, que trata captação como ganho. Pergunte sempre se houve receita ou despesa."
+  },
+  {
+    "dif": "dificil",
+    "fonte": "Simulado C1 · integração das cinco aulas",
+    "peg": "calculo_leitor",
+    "t": "Receita bruta de R$ 750.000; devoluções de R$ 25.000; tributos sobre vendas de R$ 95.000; estoque inicial de R$ 50.000; compras de R$ 420.000; estoque final de R$ 70.000. O lucro bruto é de:",
+    "a": [
+      "R$ 210.000, deduzindo as compras integrais da receita líquida apurada",
+      "R$ 280.000, desconsiderando a variação de estoques no período",
+      "R$ 630.000, deduzindo somente os tributos incidentes sobre vendas",
+      "R$ 230.000, resultado da receita líquida menos o custo das vendas",
+      "R$ 185.000, deduzindo também devoluções do custo das mercadorias"
+    ],
+    "c": 3,
+    "w": [
+      "As compras não equivalem ao CMV, que depende dos estoques inicial e final.",
+      "A variação dos estoques é indispensável para apurar corretamente o custo.",
+      "As devoluções também compõem as deduções da receita bruta do período.",
+      "",
+      "Devoluções deduzem a receita, e não o custo das mercadorias vendidas."
+    ],
+    "e": "Receita líquida = 750.000 − 25.000 − 95.000 = R$ 630.000. CMV = 50.000 + 420.000 − 70.000 = R$ 400.000. Lucro bruto = 630.000 − 400.000 = R$ 230.000. A pegadinha era A, que usa as compras (R$ 420.000) como se fossem o custo. Faça as duas contas separadamente antes de subtrair."
+  },
+  {
+    "dif": "dificil",
+    "fonte": "Simulado C1 · integração das cinco aulas",
+    "peg": "agente",
+    "t": "Em análise de duas contas, verificam-se adiantamento concedido a fornecedor de R$ 30.000 e adiantamento recebido de cliente de R$ 45.000. A classificação correta é, respectivamente:",
+    "a": [
+      "passivo circulante e ativo circulante, conforme a ordem dos desembolsos",
+      "ativo não circulante e passivo não circulante, por dependerem de entrega",
+      "ambos no ativo circulante, por envolverem valores já movimentados",
+      "ambos no passivo circulante, por decorrerem de contratos pendentes",
+      "ativo circulante e passivo circulante, conforme quem deve a prestação"
+    ],
+    "c": 4,
+    "w": [
+      "A ordem está invertida: quem adiantou ao fornecedor detém direito, não dívida.",
+      "As prestações são de curto prazo, atraindo classificação em circulante.",
+      "O adiantamento recebido gera obrigação de entregar, e não direito a receber.",
+      "O adiantamento concedido gera direito de exigir a mercadoria contratada.",
+      ""
+    ],
+    "e": "Quem adianta ao fornecedor passa a ter direito de receber a mercadoria (Ativo); quem recebe adiantado do cliente assume obrigação de entregar (Passivo). A pegadinha era A, que inverte os papéis. Identifique quem ainda deve a prestação, não quem pagou."
+  },
+  {
+    "dif": "extrema",
+    "fonte": "Simulado C1 · integração das cinco aulas",
+    "peg": "regra_invertida",
+    "t": "Mantidos o estoque inicial e as compras, o aumento do estoque final registrado produz, sobre o CMV e o lucro bruto, respectivamente, os efeitos de:",
+    "a": [
+      "redução e aumento, pela menor saída de mercadorias apurada",
+      "aumento e aumento, por elevação simultânea dos dois indicadores",
+      "redução e redução, pelo menor volume geral de operações",
+      "aumento e redução, pela maior saída de mercadorias no período",
+      "nenhum efeito, por se tratar de conta exclusivamente patrimonial"
+    ],
+    "c": 0,
+    "w": [
+      "",
+      "Se o CMV diminui, o lucro bruto aumenta; os dois não crescem juntos.",
+      "A redução do CMV eleva o lucro bruto, e não o reduz junto com o custo.",
+      "Estoque final maior significa menor saída, o que reduz o CMV do período.",
+      "O estoque final integra a fórmula do CMV e afeta diretamente o resultado."
+    ],
+    "e": "CMV = inicial + compras − final: elevar o estoque final reduz o CMV, e CMV menor eleva o lucro bruto. É exatamente o mecanismo explorado na superavaliação fraudulenta de estoques. Refaça a fórmula com um número maior no final."
+  },
+  {
+    "dif": "extrema",
+    "fonte": "Simulado C1 · integração das cinco aulas",
+    "peg": "condicionalidade",
+    "t": "Dívida classificada em 31/12/2024 como passivo não circulante teve o vencimento antecipado, por renegociação concluída em dezembro de 2024, para agosto de 2025. No Balanço de 31/12/2024, a dívida figura no:",
+    "a": [
+      "passivo não circulante, pela classificação original do contrato firmado",
+      "passivo circulante, pois passou a vencer dentro de doze meses",
+      "ativo circulante, por gerar direito decorrente da renegociação",
+      "resultado do exercício, como despesa financeira antecipada do período",
+      "patrimônio líquido, em razão da repactuação havida com o credor"
+    ],
+    "c": 1,
+    "w": [
+      "A classificação segue o vencimento vigente na data do Balanço, não o original.",
+      "",
+      "A entidade permanece devedora; nenhum direito a receber é criado.",
+      "A dívida é saldo patrimonial e permanece no Balanço, não no resultado.",
+      "Renegociar prazo não converte dívida com terceiro em capital próprio."
+    ],
+    "e": "A classificação observa o prazo efetivo na data do Balanço: agosto de 2025 está dentro de doze meses, logo Passivo Circulante. A pegadinha era A, que congela a classificação inicial. Use sempre o vencimento vigente na data-base."
+  },
+  {
+    "dif": "extrema",
+    "fonte": "Simulado C1 · integração das cinco aulas",
+    "peg": "calculo_leitor",
+    "t": "Produto vendido por R$ 120, com custo variável unitário de R$ 70 e custos fixos mensais de R$ 90.000. O ponto de equilíbrio, em unidades, é de:",
+    "a": [
+      "1.286 unidades, dividindo os custos fixos pelo custo variável unitário",
+      "750 unidades, dividindo os custos fixos pelo preço de venda unitário",
+      "1.800 unidades, dividindo os custos fixos pela margem de contribuição",
+      "8.400 unidades, multiplicando margem unitária e custos fixos totais",
+      "2.400 unidades, somando preço e custo variável antes da divisão"
+    ],
+    "c": 2,
+    "w": [
+      "O custo variável isolado não mede a contribuição de cada unidade vendida.",
+      "O divisor correto é a margem de contribuição, e não o preço integral.",
+      "",
+      "O ponto de equilíbrio decorre de divisão, jamais de multiplicação.",
+      "Preço e custo variável devem ser subtraídos para obter a margem unitária."
+    ],
+    "e": "MC unitária = 120 − 70 = R$ 50. PE = 90.000 ÷ 50 = 1.800 unidades. Conferindo: 1.800 × 50 = R$ 90.000, exatamente os custos fixos. A pegadinha era A, que divide pelo preço. Calcule a margem antes de dividir."
+  },
+  {
+    "dif": "extrema",
+    "fonte": "Simulado C1 · integração das cinco aulas",
+    "peg": "conceito_vizinho",
+    "t": "Entidade é ré em ação com perda classificada como provável e valor estimável em R$ 120.000. O tratamento contábil adequado é:",
+    "a": [
+      "apenas divulgar em nota explicativa, sem qualquer registro contábil",
+      "constituir reserva específica dentro do patrimônio líquido da entidade",
+      "registrar o valor como despesa antecipada no ativo circulante",
+      "constituir provisão no passivo, com despesa correspondente no resultado",
+      "aguardar o trânsito em julgado para qualquer reconhecimento contábil"
+    ],
+    "c": 3,
+    "w": [
+      "A mera divulgação cabe à perda possível; a provável exige reconhecimento.",
+      "Reserva é destinação de lucro e não substitui o registro de obrigação.",
+      "Não houve desembolso antecipado; trata-se de obrigação futura provável.",
+      "",
+      "A competência não condiciona o reconhecimento ao desfecho definitivo."
+    ],
+    "e": "Perda provável com valor estimável exige provisão no Passivo e despesa no resultado. A pegadinha era B, que aplica o tratamento da perda possível. Localize o grau de probabilidade: provável registra, possível divulga, remoto ignora."
+  },
+  {
+    "dif": "extrema",
+    "fonte": "Simulado C1 · integração das cinco aulas",
+    "peg": "absoluto",
+    "t": "Sobre a liquidez corrente utilizada em análise patrimonial, assinale a afirmativa correta.",
+    "a": [
+      "Índice superior a 1 garante a solvência da entidade em qualquer prazo",
+      "Índice inferior a 1 comprova a insolvência definitiva da sociedade",
+      "O índice aplica-se somente a entidades sem finalidade lucrativa",
+      "O índice dispensa a análise das demais demonstrações contábeis",
+      "O índice mede cobertura do curto prazo, sem assegurar capacidade futura"
+    ],
+    "c": 4,
+    "w": [
+      "Cobertura de curto prazo não garante o cumprimento de obrigações futuras.",
+      "Índice abaixo de 1 sinaliza aperto, mas não comprova insolvência definitiva.",
+      "Qualquer entidade que elabore demonstrações pode ter seus índices calculados.",
+      "Índices são complementares e não substituem Balanço e demonstração de resultado.",
+      ""
+    ],
+    "e": "A liquidez corrente relaciona apenas ativo e passivo circulantes, sem projetar capacidade futura. As pegadinhas eram A e B, que convertem indicador parcial em prova. Varra verbos categóricos como 'garante' e 'comprova'."
+  },
+  {
+    "dif": "extrema",
+    "fonte": "Simulado C1 · integração das cinco aulas",
+    "peg": "parte_pelo_todo",
+    "t": "Ao examinar demonstrações de uma sociedade, o analista observa lucro bruto expressivo e prejuízo líquido no mesmo exercício. Essa combinação indica que:",
+    "a": [
+      "despesas operacionais, resultado financeiro ou tributos superaram o lucro bruto",
+      "houve necessariamente erro na apuração do custo das mercadorias vendidas",
+      "a receita bruta foi integralmente consumida pelas devoluções do período",
+      "o estoque final foi subavaliado, elevando artificialmente o custo apurado",
+      "a entidade não registrou qualquer receita ao longo do exercício examinado"
+    ],
+    "c": 0,
+    "w": [
+      "",
+      "A combinação é plenamente possível sem qualquer erro de escrituração.",
+      "Lucro bruto expressivo pressupõe receita líquida relevante após deduções.",
+      "Estoque subavaliado elevaria o CMV e reduziria justamente o lucro bruto.",
+      "Sem receita não haveria lucro bruto expressivo a ser apurado no período."
+    ],
+    "e": "Entre o lucro bruto e o lucro líquido ainda entram despesas operacionais, resultado financeiro e tributos. A pegadinha era A, que trata a situação como erro. Percorra os degraus da DRE entre os dois valores."
+  },
+  {
+    "dif": "extrema",
+    "fonte": "Simulado C1 · integração das cinco aulas",
+    "peg": "regra_invertida",
+    "t": "Quanto à natureza de saldo, as contas de Despesa e as contas do Passivo são, respectivamente:",
+    "a": [
+      "credora e devedora, invertendo-se apenas no encerramento do exercício",
+      "devedora e credora, conforme o método das partidas dobradas",
+      "ambas devedoras, por representarem consumo de recursos da entidade",
+      "ambas credoras, por comporem obrigações da entidade com terceiros",
+      "indefinidas, pois dependem do porte e do regime tributário adotado"
+    ],
+    "c": 1,
+    "w": [
+      "A ordem está invertida: despesa é devedora e passivo é credora.",
+      "",
+      "Contas do Passivo têm natureza credora e aumentam por crédito.",
+      "Despesa tem natureza devedora e aumenta por débito no lançamento.",
+      "A natureza decorre do grupo contábil, não do porte da entidade."
+    ],
+    "e": "Despesa aumenta por débito (natureza devedora) e Passivo aumenta por crédito (natureza credora). A pegadinha era A, que apresenta a regra certa com os termos trocados. Guarde: Ativo e Despesa à esquerda; Passivo, PL e Receita à direita."
+  },
+  {
+    "dif": "extrema",
+    "fonte": "Simulado C1 · integração das cinco aulas",
+    "peg": "recurso_finalidade",
+    "t": "Para verificar toda a movimentação da conta Clientes ao longo de um exercício, o livro contábil adequado é o:",
+    "a": [
+      "Diário, por reunir os fatos na ordem cronológica em que ocorreram",
+      "Caixa, por registrar exclusivamente as entradas e saídas de numerário",
+      "Razão, por agrupar todos os lançamentos referentes a cada conta",
+      "Inventário, por relacionar os bens existentes em determinada data-base",
+      "Registro de Duplicatas, por controlar apenas os títulos emitidos"
+    ],
+    "c": 2,
+    "w": [
+      "O Diário apresentaria os lançamentos misturados aos demais fatos do período.",
+      "O livro Caixa controla numerário e não reúne a movimentação com clientes.",
+      "",
+      "O Inventário relaciona bens em uma data, sem histórico de movimentação.",
+      "O controle de duplicatas não abrange todos os lançamentos da conta."
+    ],
+    "e": "O Razão agrupa por conta, permitindo acompanhar toda a movimentação de Clientes. A pegadinha era A, que oferece o livro mais conhecido, com organização inadequada à pergunta. Diário é por dia; Razão é por conta."
+  },
+  {
+    "dif": "extrema",
+    "fonte": "Simulado C1 · integração das cinco aulas",
+    "peg": "verdade_externa",
+    "t": "Constatado crescimento patrimonial expressivo sem receita declarada compatível no mesmo período, a leitura contábil adequada é que o achado:",
+    "a": [
+      "comprova automaticamente a prática de crime contra a ordem tributária",
+      "indica necessariamente erro material na escrituração do exercício",
+      "é irrelevante, pois patrimônio e receita são grandezas independentes",
+      "constitui incoerência entre grandezas e exige verificação da origem",
+      "demonstra que a entidade operou abaixo do seu ponto de equilíbrio"
+    ],
+    "c": 3,
+    "w": [
+      "O achado é indício e demanda apuração; não substitui a prova do delito.",
+      "A incompatibilidade pode decorrer de ingresso não declarado, e não só de erro.",
+      "Patrimônio e resultado guardam relação direta, pois o lucro retido alimenta o PL.",
+      "",
+      "Ponto de equilíbrio mede relação entre custos e volume, não origem patrimonial."
+    ],
+    "e": "Crescimento patrimonial sem receita compatível é incoerência entre grandezas e funciona como indício, exigindo verificação da origem dos recursos. A pegadinha era A, que salta do indício para a conclusão jurídica. Separe achado contábil de conclusão penal."
+  },
+  {
+    "dif": "extrema",
+    "fonte": "Simulado C1 · integração das cinco aulas",
+    "peg": "conceito_vizinho",
+    "t": "O registro, na contabilidade da sociedade, da aquisição de imóvel destinado ao uso pessoal exclusivo do sócio viola diretamente o princípio da:",
+    "a": [
+      "continuidade das operações da entidade ao longo do tempo",
+      "competência quanto ao período de reconhecimento da operação",
+      "prudência na mensuração de ativos e passivos incertos",
+      "oportunidade quanto ao registro tempestivo dos fatos contábeis",
+      "entidade, que separa o patrimônio da sociedade e o do sócio"
+    ],
+    "c": 4,
+    "w": [
+      "A continuidade trata da presunção de prosseguimento das atividades.",
+      "A competência define o período de reconhecimento, não a separação patrimonial.",
+      "A prudência orienta a mensuração diante de incerteza entre estimativas.",
+      "A oportunidade refere-se ao momento do registro, não à titularidade do bem.",
+      ""
+    ],
+    "e": "O princípio da entidade exige separação entre o patrimônio da pessoa jurídica e o de seus sócios; registrar bem de uso pessoal no ativo da empresa é confusão patrimonial. A pegadinha era D. Identifique o sintoma: houve mistura de patrimônios."
+  }
+];
 
 const LDIAS=[
     {
@@ -22532,10 +22532,12 @@ function selecionarSimuladoInteligente(){
   const tecnologia=pool.filter(x=>materiaPorN(x.dayN)==='tec');
   const forenses=pool.filter(x=>materiaPorN(x.dayN)==='for');
   const legislacao=pool.filter(x=>materiaPorN(x.dayN)==='leg');
+  const contabilidade=pool.filter(x=>materiaPorN(x.dayN)==='con');
   if(portugues.length) adicionar(portugues,Math.min(15,escolhidas.length+1));
   if(tecnologia.length) adicionar(tecnologia,Math.min(15,escolhidas.length+1));
   if(forenses.length) adicionar(forenses,Math.min(15,escolhidas.length+1));
   if(legislacao.length) adicionar(legislacao,Math.min(15,escolhidas.length+1));
+  if(contabilidade.length) adicionar(contabilidade,Math.min(15,escolhidas.length+1));
 
   const pendentes=new Set(revisoesPendentes());
   adicionar(pool.filter(x=>pendentes.has(x.dayN)),10);
@@ -22610,9 +22612,13 @@ function obterQuestaoErro(chave){
   return {chave:chave,item:Object.assign({},item,{dayN:origem.dayN,mount:origem.mount,idx:origem.idx}),q:origem.q};
 }
 function materiaDoErro(item){
+  const id=String(item.dayN);
   const n=Number(item.dayN);
-  if(item.dayN==='SP') return 'por';
-  if(/^SF[1234]$/.test(String(item.dayN))) return 'for';
+  if(id==='SP') return 'por';
+  if(/^(S1|S2|S3|S4|SF)$/.test(id)) return 'tec';
+  if(/^(SF1|SF2|SF3|SF4|SFF)$/.test(id)) return 'for';
+  if(id==='SL') return 'leg';
+  if(id==='SC') return 'con';
   return materiaPorN(n);
 }
 
@@ -22623,7 +22629,7 @@ function abrirCadernoErros(){
   if(!entradas.length){
     body.innerHTML='<div class="dica"><b>✔ Caderno limpo.</b> Nenhuma questão pendente. Quando você errar, ela aparecerá aqui automaticamente e só sairá após dois acertos consecutivos.</div>';
   }else{
-    [['por','Português'],['tec','Tecnologia & Cibersegurança'],['for','Ciências Forenses']].forEach(([tipo,titulo])=>{
+    [['por','Português'],['tec','Tecnologia & Cibersegurança'],['for','Ciências Forenses'],['leg','Legislação Estadual e Institucional'],['con','Contabilidade Geral']].forEach(([tipo,titulo])=>{
       const grupo=entradas.filter(x=>materiaDoErro(x.item)===tipo);
       if(!grupo.length) return;
       const cab=document.createElement('div');
@@ -22707,8 +22713,9 @@ function resumoEstatisticas(){
   const forenses=estatisticasMateria(FDIAS.map(d=>d.n));
   const legislacao=estatisticasMateria(LDIAS.map(d=>d.n));
   const contabilidade=estatisticasMateria(CDIAS.map(d=>d.n));
-  const a=tec.a+por.a+forenses.a+legislacao.a,r=tec.r+por.r+forenses.r+legislacao.r;
-  return {tec:tec,por:por,forenses:forenses,legislacao:legislacao,a:a,r:r,p:r?Math.round((a/r)*100):0};
+  const a=tec.a+por.a+forenses.a+legislacao.a+contabilidade.a;
+  const r=tec.r+por.r+forenses.r+legislacao.r+contabilidade.r;
+  return {tec:tec,por:por,forenses:forenses,legislacao:legislacao,contabilidade:contabilidade,a:a,r:r,p:r?Math.round((a/r)*100):0};
 }
 function atualizarCardSimulado(){
   const n=Object.keys(progresso.aulas).length;
@@ -22732,7 +22739,8 @@ function abrirEstatisticas(){
     ${linha('Língua Portuguesa',e.por)}
     ${linha('Tecnologia & Cibersegurança',e.tec)}
     ${linha('Ciências Forenses',e.forenses)}
-    ${linha('Legislação Estadual e Institucional',e.legislacao)}`;
+    ${linha('Legislação Estadual e Institucional',e.legislacao)}
+    ${linha('Contabilidade Geral',e.contabilidade)}`;
   show('estatisticas');
   back.style.display='inline-flex';
   document.getElementById('placar').classList.remove('show');
@@ -22850,6 +22858,17 @@ function buildCadernoErros(){
   const revisoesLeg=criarCardRevisoes(homeLeg,errosLeg);
   const simLeg=criarCardSimulado(homeLeg,revisoesLeg);
   criarCardEstatisticas(homeLeg,simLeg);
+
+  const homeCon=document.querySelector('#homeCon .home');
+  const introCon=homeCon?homeCon.querySelector('.home-intro'):null;
+  const labelCon=document.createElement('div');
+  labelCon.className='sec-label';
+  labelCon.textContent='Central de Questões';
+  if(introCon) introCon.insertAdjacentElement('afterend',labelCon);
+  const errosCon=criarCardErros(homeCon,labelCon);
+  const revisoesCon=criarCardRevisoes(homeCon,errosCon);
+  const simCon=criarCardSimulado(homeCon,revisoesCon);
+  criarCardEstatisticas(homeCon,simCon);
 
   atualizarCardErros();
   atualizarCardRevisoes();
@@ -35938,7 +35957,7 @@ function openDay(n){
   document.getElementById('placar').classList.add('show');
   updatePlacar(n);
   const dd=DIAS.find(x=>x.n===n)||PDIAS.find(x=>x.n===n)||FDIAS.find(x=>x.n===n)||LDIAS.find(x=>x.n===n)||CDIAS.find(x=>x.n===n);
-  document.getElementById('htitle').textContent=ehTecnologiaN(n)?('Tecnologia '+(dd.label||('Dia '+n))):ehForensesN(n)?('Ciências Forenses '+(dd.label||('F'+n))):ehLegislacaoN(n)?('Legislação '+(dd.label||('L'+n))):('Português '+(dd.label||('P'+(n-100))));
+  document.getElementById('htitle').textContent=ehTecnologiaN(n)?('Tecnologia '+(dd.label||('Dia '+n))):ehForensesN(n)?('Ciências Forenses '+(dd.label||('F'+n))):ehLegislacaoN(n)?('Legislação '+(dd.label||('L'+n))):ehContabilidadeN(n)?('Contabilidade '+(dd.label||('C'+n))):('Português '+(dd.label||('P'+(n-100))));
   document.getElementById('hsub').textContent=dd?dd.topic:'';
 }
 let CUR_SUBJ='tec';
@@ -35959,7 +35978,7 @@ function openTecnologia(){
   back.style.display='inline-flex';
   document.getElementById('placar').classList.remove('show');
   document.getElementById('htitle').textContent='Tecnologia & Cibersegurança';
-  document.getElementById('hsub').textContent='37 microaulas · 5 simulados · 480 questões';
+  document.getElementById('hsub').textContent=DIAS.length+' microaulas · 5 simulados · '+(DIAS.reduce((t,d)=>t+d.aquecimento.length+d.fgv.length+d.extrema.length,0)+SIM1.length+SIM2.length+SIM3.length+SIM4.length+SIMF.length)+' questões';
 }
 function openPortugues(){
   CUR_SUBJ='por';
@@ -36000,7 +36019,10 @@ function openSimuladoCon(){
   CUR_SUBJ='con';
   show('simuladoCon');
   back.style.display='inline-flex';
-  document.getElementById('placar').classList.remove('show');
+  document.getElementById('placar').classList.add('show');
+  updatePlacar('SC');
+  document.getElementById('htitle').textContent='Contabilidade Geral · Simulado';
+  document.getElementById('hsub').textContent='C1.1 a C1.5 · 15 questões · meta 10/15';
 }
 
 function openLegislacao(){
@@ -36073,7 +36095,7 @@ function goHome(){
   // volta para a home da matéria atual, ou para o índice se já estiver nela
   const active=document.querySelector('.view.active');
   const id=active?active.id:'';
-  if(id==='home'||id==='homePor'||id==='homeFor'||id==='homeLeg'){ openSubjects(); return; }
+  if(id==='home'||id==='homePor'||id==='homeFor'||id==='homeLeg'||id==='homeCon'){ openSubjects(); return; }
   if(CUR_SUBJ==='por'){ openPortugues(); } else if(CUR_SUBJ==='for'){ openForenses(); } else if(CUR_SUBJ==='leg'){ openLegislacao(); } else if(CUR_SUBJ==='con'){ openContabilidade(); } else { openTecnologia(); }
 }
 function openMacete(){
@@ -36126,7 +36148,7 @@ function openSimuladoF(){
   document.getElementById('placar').classList.add('show');
   updatePlacar('SF');
   document.getElementById('htitle').textContent='Simulado Final';
-  document.getElementById('hsub').textContent='Toda a Tecnologia · 25 questões · T1.1 a T8.2';
+  document.getElementById('hsub').textContent='Toda a Tecnologia · '+SIMF.length+' questões · T1.1 a T8.2';
 }
 
 function openSimulado4(){
@@ -36163,6 +36185,8 @@ renderQuiz(SIMCF4,'simFor4-body','SF4');
 renderQuiz(SIMCFF,'simForFinal-body','SFF');
 renderQuiz(SIMCON.map(embaralharQuestao),'simCon-body','SC');
 renderQuiz(SIMLEG.map(embaralharQuestao),'simLeg-body','SL');
+const totalTec=DIAS.reduce((t,d)=>t+d.aquecimento.length+d.fgv.length+d.extrema.length,0)+SIM1.length+SIM2.length+SIM3.length+SIM4.length+SIMF.length;
+const tecCountEl=document.getElementById('tec-card-count'); if(tecCountEl) tecCountEl.textContent=totalTec;
 const totalLeg=LDIAS.reduce((t,d)=>t+d.aquecimento.length+d.fgv.length+d.extrema.length,0)+SIMLEG.length;
 const legCountEl=document.getElementById('leg-card-count'); if(legCountEl) legCountEl.textContent=totalLeg;
 const totalCon=CDIAS.reduce((t,d)=>t+d.aquecimento.length+d.fgv.length+d.extrema.length,0)+SIMCON.length;
